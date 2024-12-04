@@ -9,4 +9,5 @@ APPS = [
     "drf_spectacular",
     "core.http.HttpConfig",
     "core.apps.accounts.apps.AccountsConfig",
+    "silk",
 ]
