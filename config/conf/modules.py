@@ -1,3 +1,4 @@
 MODULES = [
-    "core.apps.content"
+    "core.apps.content",
+    "core.apps.api"
 ]
