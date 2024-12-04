@@ -1,7 +1,7 @@
 from django.db import models
 from core.apps.content.models.cadr import Cadr
-from core.apps.content.models.category import CategoryList
-from core.apps.content.models.genre import GenreList
+from core.apps.content.models.category import Category
+from core.apps.content.models.genre import Genre
 from core.apps.content.models.tag import Tag
 from core.apps.content.models.video import VideoContent
 
@@ -19,8 +19,8 @@ class Content(models.Model):
     title = models.CharField(max_length=300)
 
     kadrs = models.ManyToManyField(Cadr, blank=True)
-    genre = models.ManyToManyField(GenreList)
-    category = models.ManyToManyField(CategoryList)
+    genre = models.ManyToManyField(Genre)
+    category = models.ManyToManyField(Category)
     description = models.TextField()
 
     contents = models.ManyToManyField(VideoContent, related_name="contents")
