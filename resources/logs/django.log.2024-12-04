@@ -1,0 +1,3380 @@
+WARNING 2024-12-04 16:26:47,348 log Not Found: /
+WARNING 2024-12-04 16:26:47,349 log Not Found: /
+WARNING 2024-12-04 16:26:53,540 log Not Found: /favicon.ico
+WARNING 2024-12-04 16:26:56,064 log Not Found: /
+WARNING 2024-12-04 16:26:56,067 log Not Found: /
+WARNING 2024-12-04 16:27:01,657 log Not Found: /
+WARNING 2024-12-04 16:27:10,008 log Not Found: /
+WARNING 2024-12-04 16:28:23,146 log Not Found: /favicon.ico
+WARNING 2024-12-04 16:30:09,204 log Not Found: /
+WARNING 2024-12-04 16:30:09,474 log Not Found: /
+WARNING 2024-12-04 16:30:11,717 log Not Found: /favicon.ico
+WARNING 2024-12-04 16:30:11,735 log Not Found: /favicon.ico
+WARNING 2024-12-04 16:31:41,568 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:31:43,676 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:31:44,900 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:31:46,243 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:31:48,902 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:31:50,057 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:31:54,195 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:31:55,333 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:31:58,648 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:31:59,778 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:32:01,905 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:32:06,112 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:32:42,248 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:32:43,350 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:32:45,475 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:32:49,723 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:33:10,764 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:33:11,899 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:33:14,026 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:33:18,141 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:33:39,962 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:34:16,324 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:34:21,317 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:34:22,483 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:34:24,644 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:34:28,778 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:35:14,766 log Not Found: /
+WARNING 2024-12-04 16:35:24,205 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:35:25,356 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:35:27,489 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:35:31,612 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:35:38,476 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:35:39,640 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:35:41,777 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:35:45,918 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:35:52,588 log Not Found: /favicon.ico
+ERROR 2024-12-04 16:36:00,810 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "category_id" of relation "content_categorylist" violates not-null constraint
+DETAIL:  Failing row contains (13, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.13/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "category_id" of relation "content_categorylist" violates not-null constraint
+DETAIL:  Failing row contains (13, null).
+
+WARNING 2024-12-04 16:36:18,218 log Not Found: /api/v1/category/
+WARNING 2024-12-04 16:36:34,125 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:36:38,277 log Bad Request: /api/v1/contents/
+ERROR 2024-12-04 16:37:40,433 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "category_id" of relation "content_categorylist" violates not-null constraint
+DETAIL:  Failing row contains (14, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.13/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "category_id" of relation "content_categorylist" violates not-null constraint
+DETAIL:  Failing row contains (14, null).
+
+WARNING 2024-12-04 16:40:35,798 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:40:36,943 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:40:39,075 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:41:56,126 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:42:03,061 log Not Found: /api/v1/',
+WARNING 2024-12-04 16:45:17,858 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:45:33,731 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:46:30,604 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:46:41,314 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:47:14,767 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:50:41,660 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:50:43,800 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:50:48,133 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:50:49,294 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:50:51,426 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:50:55,580 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:52:42,632 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:52:43,755 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:52:45,890 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:52:50,034 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:53:45,968 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:53:47,140 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:53:49,257 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:53:53,374 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:54:14,268 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:54:15,413 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:54:17,547 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:54:21,695 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:57:13,241 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:57:14,404 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:57:16,532 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 16:57:20,666 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:01:55,033 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:01:56,242 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:01:58,435 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:02:11,565 log Not Found: /api/v1/contents/8/
+WARNING 2024-12-04 17:03:02,888 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:03:04,057 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:03:06,192 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:03:15,490 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:04:55,892 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:04:57,035 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:04:59,158 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:05:03,284 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:05:22,709 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:05:23,858 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:05:26,000 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:05:30,133 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:05:57,453 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:09:05,657 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:09:07,855 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:09:12,019 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:10:08,897 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:12:50,944 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:12:52,091 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:12:54,299 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:14:45,389 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:14:46,629 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:14:48,773 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:14:52,907 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:15:49,519 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:15:50,699 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:15:52,844 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:15:57,388 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:15:58,575 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:00,769 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:04,935 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:11,839 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:13,019 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:15,153 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:19,340 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:27,190 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:28,352 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:30,510 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:16:34,665 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:17:24,302 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:17:25,499 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:17:27,639 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:17:31,788 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:17:56,292 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:17:57,445 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:17:59,575 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:18:03,791 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:18:39,568 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:18:40,722 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:18:42,887 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:18:47,080 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:19:16,000 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:19:17,147 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:19:19,312 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:19:23,472 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:19:37,131 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:19:38,273 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:19:43,325 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:19:49,766 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:19:59,876 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:20:01,007 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:20:03,140 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:20:07,278 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:20:17,233 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:20:18,389 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:20:20,561 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:20:24,718 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:20:58,451 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:12,789 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:13,959 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:16,711 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:17,848 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:27,081 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:28,238 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:30,356 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:34,583 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:44,613 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:45,798 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:47,942 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:21:52,111 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:22:24,473 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:22:32,216 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:22:34,332 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:22:38,511 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:37:55,660 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:37:56,870 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:37:59,049 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:38:00,443 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:38:01,673 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:38:12,829 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:50:16,283 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:50:17,452 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:50:19,582 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:50:23,762 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:50:54,516 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:50:55,695 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:50:57,848 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:02,014 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:12,723 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:13,906 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:16,680 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:18,743 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:19,870 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:21,980 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:30,081 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:31,212 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:37,352 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:41,140 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:51:42,269 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:52:41,043 log Not Found: /
+WARNING 2024-12-04 17:54:12,606 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:13,765 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:15,972 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:20,151 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:22,312 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:23,515 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:25,662 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:30,355 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:39,718 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:40,842 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:46,129 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:54:47,252 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:55:45,485 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:55:46,692 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:55:48,831 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:55:52,981 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:55:55,615 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:55:56,729 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:56:32,177 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:56:33,299 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:56:41,995 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:56:43,123 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 17:56:54,316 log Forbidden (Origin checking failed - https://cdn.seezntv.uz does not match any trusted origins.): /admin/login/
+WARNING 2024-12-04 17:57:44,836 log Forbidden (Origin checking failed - https://cdn.seezntv.uz does not match any trusted origins.): /admin/login/
+WARNING 2024-12-04 18:01:07,431 log Not Found: /
+WARNING 2024-12-04 18:01:43,405 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:01:44,644 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:01:46,884 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:01:51,178 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:05:45,701 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:05:46,962 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:05:49,298 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:06:24,307 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:06:25,465 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:06:27,621 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:06:31,924 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:07:22,289 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:07:23,581 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:07:25,729 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:07:30,041 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:07:51,952 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:07:53,084 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:07:55,313 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:08:04,409 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:08:11,713 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:08:12,852 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:08:32,971 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:08:37,643 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:09:24,264 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:09:25,393 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:09:27,680 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:09:32,317 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:15:22,911 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:16:12,957 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:23:54,681 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:23:55,876 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:23:58,021 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:24:01,052 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:24:02,738 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:25:01,714 log Not Found: /
+WARNING 2024-12-04 18:25:07,587 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:25:08,770 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:25:12,010 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:25:13,180 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:25:15,358 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:25:30,825 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:25:31,954 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:44:58,046 log Not Found: /favicon.ico
+WARNING 2024-12-04 18:45:19,865 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:45:21,156 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:45:28,035 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:45:32,116 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:45:33,258 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:45:35,413 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:45:41,772 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:45:42,940 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:45:45,083 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:45:49,272 log Bad Request: /api/v1/contents/
+ERROR 2024-12-04 18:46:30,773 log Internal Server Error: /api/v1/contents/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:30,938 log Internal Server Error: /api/v1/contents/istoy/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:30,954 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:32,294 log Internal Server Error: /api/v1/contents/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:32,505 log Internal Server Error: /api/v1/contents/istoy/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:32,529 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:34,684 log Internal Server Error: /api/v1/contents/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:34,983 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:35,072 log Internal Server Error: /api/v1/contents/istoy/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:39,153 log Internal Server Error: /api/v1/contents/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:39,430 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:39,555 log Internal Server Error: /api/v1/contents/istoy/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:47,814 log Internal Server Error: /api/v1/contents/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:47,830 log Internal Server Error: /api/v1/contents/istoy/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:47,858 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:49,404 log Internal Server Error: /api/v1/contents/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:49,424 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:49,649 log Internal Server Error: /api/v1/contents/istoy/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:51,844 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:51,932 log Internal Server Error: /api/v1/contents/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:52,127 log Internal Server Error: /api/v1/contents/istoy/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:56,317 log Internal Server Error: /api/v1/contents/category/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:56,432 log Internal Server Error: /api/v1/contents/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+ERROR 2024-12-04 18:46:56,552 log Internal Server Error: /api/v1/contents/istoy/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 86, in __call__
+    self.process_request(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/middleware.py", line 142, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/usr/local/lib/python3.13/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+        path=path,
+    ...<3 lines>...
+        view_name=view_name,
+        body=body)
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/silk/models.py", line 195, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1834, in execute_sql
+    with self.connection.cursor() as cursor:
+         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Name does not resolve
+
+WARNING 2024-12-04 18:49:05,432 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:49:06,698 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:49:14,024 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:49:33,944 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:49:35,119 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:50:52,958 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:50:54,212 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:50:56,398 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 18:59:53,088 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 19:02:50,495 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 19:02:51,728 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 19:02:53,881 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 19:03:08,339 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 19:15:27,372 log Not Found: /api/v1/contents/4/
+WARNING 2024-12-04 19:27:21,433 log Not Found: /robots.txt
+WARNING 2024-12-04 19:27:21,825 log Not Found: /
+WARNING 2024-12-04 19:28:43,524 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 19:31:19,472 log Not Found: /robots.txt
+WARNING 2024-12-04 19:31:20,319 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 19:50:23,044 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:17:29,010 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:18:46,341 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:18:47,559 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:18:49,769 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:30:09,185 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:30:11,419 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:30:15,558 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:38:06,757 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:38:07,963 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:38:10,717 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:38:14,947 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:53:42,167 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:53:49,008 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:53:51,529 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:53:57,696 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:53:58,990 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:54:01,648 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:54:06,131 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:54:24,325 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:54:26,435 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:54:30,188 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:54:34,664 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:59:47,995 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:59:52,728 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 20:59:55,417 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 21:00:04,990 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 21:01:00,321 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 21:27:02,205 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 21:27:03,485 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 21:27:05,754 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 21:27:12,688 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 21:27:13,931 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 21:47:55,937 log Not Found: /.env
+WARNING 2024-12-04 22:10:21,052 log Not Found: /api/v1/contents/7/
+WARNING 2024-12-04 22:12:42,207 log Not Found: /
+WARNING 2024-12-04 22:12:42,603 log Not Found: /favicon.ico
+WARNING 2024-12-04 22:17:24,317 log Not Found: /api/v1/contents/55/
+WARNING 2024-12-04 22:19:30,754 log Not Found: /
+WARNING 2024-12-04 22:30:56,172 log Not Found: /console/
+WARNING 2024-12-04 22:37:22,933 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 22:37:24,092 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 22:37:26,237 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 22:37:30,372 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 22:38:29,564 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 22:38:30,902 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 22:38:33,092 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 22:38:37,295 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 23:00:23,387 log Not Found: /_vti_pvt/authors.pwd
+WARNING 2024-12-04 23:00:23,397 log Not Found: /server-status
+WARNING 2024-12-04 23:00:23,430 log Not Found: /api/.env
+WARNING 2024-12-04 23:00:23,450 log Not Found: /config.yaml
+WARNING 2024-12-04 23:00:23,501 log Not Found: /backup.sql
+WARNING 2024-12-04 23:00:23,502 log Not Found: /secrets.json
+WARNING 2024-12-04 23:00:23,502 log Not Found: /.ssh/id_rsa
+WARNING 2024-12-04 23:00:23,575 log Not Found: /phpinfo.php
+WARNING 2024-12-04 23:00:23,581 log Not Found: /_vti_pvt/administrators.pwd
+WARNING 2024-12-04 23:00:23,647 log Not Found: /web.config
+WARNING 2024-12-04 23:00:23,650 log Not Found: /backup.tar.gz
+WARNING 2024-12-04 23:00:23,755 log Not Found: /docker-compose.yml
+WARNING 2024-12-04 23:00:23,766 log Not Found: /config/database.php
+WARNING 2024-12-04 23:00:23,776 log Not Found: /database.sql
+WARNING 2024-12-04 23:00:23,778 log Not Found: /config.yml
+WARNING 2024-12-04 23:00:23,778 log Not Found: /_vti_pvt/service.pwd
+WARNING 2024-12-04 23:00:23,821 log Not Found: /config.xml
+WARNING 2024-12-04 23:00:23,821 log Not Found: /.vscode/sftp.json
+WARNING 2024-12-04 23:00:23,791 log Not Found: /server.key
+WARNING 2024-12-04 23:00:23,805 log Not Found: /user_secrets.yml
+WARNING 2024-12-04 23:00:23,805 log Not Found: /.ssh/id_ed25519
+WARNING 2024-12-04 23:00:23,783 log Not Found: /backup.zip
+WARNING 2024-12-04 23:00:23,822 log Not Found: /.env
+WARNING 2024-12-04 23:00:23,778 log Not Found: /config.php
+WARNING 2024-12-04 23:00:23,843 log Not Found: /wp-config.php
+WARNING 2024-12-04 23:00:23,844 log Not Found: /cloud-config.yml
+WARNING 2024-12-04 23:00:23,847 log Not Found: /
+WARNING 2024-12-04 23:00:23,848 log Not Found: /dump.sql
+WARNING 2024-12-04 23:00:23,850 log Not Found: /.git/HEAD
+WARNING 2024-12-04 23:00:23,850 log Not Found: /.ssh/id_ecdsa
+WARNING 2024-12-04 23:00:23,851 log Not Found: /etc/ssl/private/server.key
+WARNING 2024-12-04 23:00:23,855 log Not Found: /.env.production
+WARNING 2024-12-04 23:00:23,858 log Not Found: /feed
+WARNING 2024-12-04 23:00:23,858 log Not Found: /config/production.json
+WARNING 2024-12-04 23:00:23,858 log Not Found: /.aws/credentials
+WARNING 2024-12-04 23:00:23,860 log Not Found: /wp-admin/setup-config.php
+WARNING 2024-12-04 23:00:23,862 log Not Found: /.kube/config
+WARNING 2024-12-04 23:00:23,863 log Not Found: /.svn/wc.db
+WARNING 2024-12-04 23:00:23,865 log Not Found: /etc/shadow
+WARNING 2024-12-04 23:00:23,866 log Not Found: /config.json
+WARNING 2024-12-04 23:11:12,284 log Bad Request: /api/v1/contents/
+WARNING 2024-12-04 23:31:19,517 log Not Found: /robots.txt
+WARNING 2024-12-04 23:35:09,207 log Not Found: /.env
+WARNING 2024-12-04 23:35:09,527 log Not Found: /
