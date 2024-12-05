@@ -15,7 +15,7 @@ class CategoryModel(AbstractBaseModel):
         db_table = "category"
         verbose_name = _("CategoryModel")
         verbose_name_plural = _("CategoryModels")
-        ordering = ['position']
+        ordering = ["position"]
 
 
 class GenreModel(AbstractBaseModel):
@@ -31,7 +31,7 @@ class GenreModel(AbstractBaseModel):
 
 
 class CadrModel(AbstractBaseModel):
-    image = models.FileField(verbose_name=_("image"), upload_to="cadr/")
+    image = models.FileField(verbose_name=_("image"), upload_to="cadr/", max_length=255)
 
     def __str__(self):
         return self.image.name

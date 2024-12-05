@@ -12,10 +12,10 @@ class ContentModel(AbstractBaseModel):
     title = models.CharField(verbose_name=_("title"), max_length=300)
     description = models.TextField(verbose_name=_("description"))
 
-    poster_desktop = models.ImageField(verbose_name=_("poster_desktop"), upload_to="poster/")
-    poster_mobile = models.ImageField(verbose_name=_("poster_mobile"), upload_to="poster/")
-    poster_card = models.ImageField(verbose_name=_("poster_card"), upload_to="poster/")
-    poster_video = models.FileField(verbose_name=_("poster_video"), upload_to="poster/")
+    poster_desktop = models.ImageField(verbose_name=_("poster_desktop"), upload_to="poster/", max_length=255)
+    poster_mobile = models.ImageField(verbose_name=_("poster_mobile"), upload_to="poster/", max_length=255)
+    poster_card = models.ImageField(verbose_name=_("poster_card"), upload_to="poster/", max_length=255)
+    poster_video = models.FileField(verbose_name=_("poster_video"), upload_to="poster/", max_length=255)
 
     genre = models.ManyToManyField(verbose_name=_("genre"), to="GenreModel")
     tags = models.ManyToManyField(verbose_name=_("tags"), to="TagModel", blank=True)
