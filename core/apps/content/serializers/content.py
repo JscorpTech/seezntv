@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.apps.content.models.break_items import Break
+from core.apps.content.models.break_items import BreakList
 from core.apps.content.models.content import Content
 
 
@@ -50,7 +50,7 @@ class ContentRetriveSerializer(serializers.ModelSerializer):
     def get_breaks(self, obj):
         # Retrieve the associated breaks for the Content instance
         try:
-            breaks_items = Break.objects.get(item__break_item=obj)
+            breaks_items = BreakList.objects.get(item__break_item=obj)
         except:
             return []
         breaks = []

@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
-from core.apps.content.models.category import Category
+from core.apps.content.models.category import CategoryList
 
 
 class CategoryListSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Category
+        model = CategoryList
         fields = "__all__"
         depth = 1
 

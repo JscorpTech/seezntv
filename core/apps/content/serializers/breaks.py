@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from core.apps.content.models.break_items import Break
+from core.apps.content.models.break_items import BreakList
 
 
 class BreaksSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Break
+        model = BreakList
         fields = "__all__"
         depth = 2
