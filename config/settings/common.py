@@ -141,7 +141,7 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = "uz"
 LANGUAGE_CODE = "uz"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "resources/media")  # Media files
-MEDIA_URL = "/resources/media/"
+MEDIA_URL = "http://146.0.75.247:2300/seezntv/"
 
 AUTH_USER_MODEL = "http.User"
 
@@ -152,3 +152,4 @@ ALLOWED_HOSTS += env("ALLOWED_HOSTS").split(",")
 CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS").split(",")
 
 SILKY_PERMISSIONS = lambda user: user.is_superuser
+FILE_UPLOAD_TEMP_DIR = os.path.join(BASE_DIR, "resources/chunks/")

@@ -14,6 +14,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 urlpatterns = [
     path("", include("core.apps.accounts.urls")),
     path("api/v1/", include("core.apps.content.urls")),
+    path("api/v2/", include("core.apps.api.urls")),
 ]
 
 
@@ -21,7 +22,7 @@ urlpatterns = [
 # Library urls
 ################
 urlpatterns += [
-    path('silk/', include('silk.urls', namespace='silk')),
+    path("silk/", include("silk.urls", namespace="silk")),
     path("admin/", admin.site.urls),
     path("rosetta/", include("rosetta.urls")),
     path("accounts/", include("django.contrib.auth.urls")),

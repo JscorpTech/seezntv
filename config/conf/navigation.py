@@ -28,4 +28,16 @@ PAGES = [
             },
         ],
     },
+    {
+        "title": _("Base"),
+        "separator": True,  # Top border
+        "items": [
+            {"title": _("Filmlar"), "icon": "list", "link": reverse_lazy("admin:api_contentmodel_changelist")},
+            {"title": _("Kategoriler"), "icon": "list", "link": reverse_lazy("admin:api_categorymodel_changelist")},
+            {"title": _("Janrlar"), "icon": "list", "link": reverse_lazy("admin:api_genremodel_changelist")},
+            {"title": _("tarafusslar"), "icon": "list", "link": reverse_lazy("admin:api_intervalmodel_changelist")},
+            {"title": _("Istory"), "icon": "list", "link": reverse_lazy("admin:api_istorymodel_changelist")},
+            {"title": _("Taglar"), "icon": "list", "link": reverse_lazy("admin:api_tagmodel_changelist")},
+        ],
+    },
 ]

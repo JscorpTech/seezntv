@@ -22,3 +22,5 @@ platformdirs
 psycopg2-binary
 tomli
 django-silk==5.3.1
+django-storages
+boto3
