@@ -69,7 +69,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "silk.middleware.SilkyMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -150,5 +149,3 @@ CELERY_RESULT_BACKEND = env("RABBITMQ_RESULT_BACKEND")
 
 ALLOWED_HOSTS += env("ALLOWED_HOSTS").split(",")
 CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS").split(",")
-
-SILKY_PERMISSIONS = lambda user: user.is_superuser
