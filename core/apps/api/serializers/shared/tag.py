@@ -6,7 +6,10 @@ from ...models import TagModel
 class BaseTagSerializer(serializers.ModelSerializer):
     class Meta:
         model = TagModel
-        exclude = []
+        fields = (
+            "id",
+            "name",
+        )
 
 
 class ListTagSerializer(BaseTagSerializer):

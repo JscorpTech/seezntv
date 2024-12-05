@@ -6,7 +6,10 @@ from ...models import GenreModel
 class BaseGenreSerializer(serializers.ModelSerializer):
     class Meta:
         model = GenreModel
-        exclude = []
+        fields = [
+            "id",
+            "name"
+        ]
 
 
 class ListGenreSerializer(BaseGenreSerializer):

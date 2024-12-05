@@ -1,10 +1,10 @@
 from modeltranslation.translator import TranslationOptions, register
 
-from ..models import IstoryModel
+from ..models import BannerModel
 
 
-@register(IstoryModel)
-class IstoryTranslation(TranslationOptions):
+@register(BannerModel)
+class BannerTranslation(TranslationOptions):
     fields = [
         "content"
     ]

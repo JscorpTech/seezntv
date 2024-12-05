@@ -152,4 +152,3 @@ ALLOWED_HOSTS += env("ALLOWED_HOSTS").split(",")
 CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS").split(",")
 
 SILKY_PERMISSIONS = lambda user: user.is_superuser
-FILE_UPLOAD_TEMP_DIR = os.path.join(BASE_DIR, "resources/chunks/")

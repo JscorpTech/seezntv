@@ -1,28 +1,34 @@
 from typing import Any
 
+from django.db.models.query import QuerySet
 from rest_framework.permissions import AllowAny
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
-from ..models import IstoryModel
-from ..serializers.istory import CreateIstorySerializer, ListIstorySerializer, RetrieveIstorySerializer
+from ..models import BannerModel
+from ..serializers.banner import CreateBannerSerializer, ListBannerSerializer, RetrieveBannerSerializer
 from drf_spectacular.utils import extend_schema
 
 
-@extend_schema(tags=["istory"])
-class IstoryView(ReadOnlyModelViewSet):
-    queryset = IstoryModel.objects.all()
+@extend_schema(tags=["banner"])
+class BannerView(ReadOnlyModelViewSet):
     pagination_class = None
+
+    def get_queryset(self) -> QuerySet:
+        return BannerModel.objects.prefetch_related(
+            "film__tags",
+            "film__genre",
+        )
 
     def get_serializer_class(self) -> Any:
         match self.action:
             case "list":
-                return ListIstorySerializer
+                return ListBannerSerializer
             case "retrieve":
-                return RetrieveIstorySerializer
+                return RetrieveBannerSerializer
             case "create":
-                return CreateIstorySerializer
+                return CreateBannerSerializer
             case _:
-                return ListIstorySerializer
+                return ListBannerSerializer
 
     def get_permissions(self) -> Any:
         perms = []

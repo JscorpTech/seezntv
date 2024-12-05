@@ -1,3 +1,4 @@
+from .banner import *  # noqa
 from .content import *  # noqa
 from .istory import *  # noqa
 from .media import *  # noqa

@@ -4,20 +4,27 @@ from rest_framework.permissions import AllowAny
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from ..models import CategoryModel, GenreModel, IntervalModel, TagModel
-from ..serializers.shared import (CreateCategorySerializer,
-                                  CreateGenreSerializer,
-                                  CreateIntervalSerializer,
-                                  CreateTagSerializer, ListCategorySerializer,
-                                  ListGenreSerializer, ListIntervalSerializer,
-                                  ListTagSerializer,
-                                  RetrieveCategorySerializer,
-                                  RetrieveGenreSerializer,
-                                  RetrieveIntervalSerializer,
-                                  RetrieveTagSerializer)
+from ..serializers.shared import (
+    CreateCategorySerializer,
+    CreateGenreSerializer,
+    CreateIntervalSerializer,
+    CreateTagSerializer,
+    ListCategorySerializer,
+    ListGenreSerializer,
+    ListIntervalSerializer,
+    ListTagSerializer,
+    RetrieveCategorySerializer,
+    RetrieveGenreSerializer,
+    RetrieveIntervalSerializer,
+    RetrieveTagSerializer,
+)
+from drf_spectacular.utils import extend_schema
 
 
+@extend_schema(tags=["category"])
 class CategoryView(ReadOnlyModelViewSet):
     queryset = CategoryModel.objects.all()
+    pagination_class = None
 
     def get_serializer_class(self) -> Any:
         match self.action:
@@ -39,8 +46,10 @@ class CategoryView(ReadOnlyModelViewSet):
         return super().get_permissions()
 
 
+@extend_schema(tags=["genre"])
 class GenreView(ReadOnlyModelViewSet):
     queryset = GenreModel.objects.all()
+    pagination_class = None
 
     def get_serializer_class(self) -> Any:
         match self.action:
@@ -62,8 +71,10 @@ class GenreView(ReadOnlyModelViewSet):
         return super().get_permissions()
 
 
+@extend_schema(tags=["tag"])
 class TagView(ReadOnlyModelViewSet):
     queryset = TagModel.objects.all()
+    pagination_class = None
 
     def get_serializer_class(self) -> Any:
         match self.action:
@@ -85,6 +96,7 @@ class TagView(ReadOnlyModelViewSet):
         return super().get_permissions()
 
 
+@extend_schema(["interval"])
 class IntervalView(ReadOnlyModelViewSet):
     queryset = IntervalModel.objects.all()
 
