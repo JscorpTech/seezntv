@@ -7,6 +7,7 @@ from core.http.models import AbstractBaseModel
 class IstoryModel(AbstractBaseModel):
     content = models.TextField(verbose_name=_("content"))
     videos = models.ManyToManyField("IstoryVideoModel")
+    position = models.PositiveIntegerField(_("position"), default=0)
 
     def __str__(self):
         return self.content
@@ -15,6 +16,7 @@ class IstoryModel(AbstractBaseModel):
         db_table = "istory"
         verbose_name = _("IstoryModel")
         verbose_name_plural = _("IstoryModels")
+        ordering = ['position']
 
 
 class IstoryVideoModel(AbstractBaseModel):

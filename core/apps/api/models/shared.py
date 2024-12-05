@@ -6,6 +6,7 @@ from core.http.models import AbstractBaseModel
 
 class CategoryModel(AbstractBaseModel):
     name = models.CharField(verbose_name=_("name"), max_length=255)
+    position = models.PositiveIntegerField(_("position"), default=0)
 
     def __str__(self):
         return self.name
@@ -14,6 +15,7 @@ class CategoryModel(AbstractBaseModel):
         db_table = "category"
         verbose_name = _("CategoryModel")
         verbose_name_plural = _("CategoryModels")
+        ordering = ['position']
 
 
 class GenreModel(AbstractBaseModel):
