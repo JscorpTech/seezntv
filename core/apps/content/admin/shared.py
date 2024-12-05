@@ -3,9 +3,11 @@ from unfold.admin import ModelAdmin
 
 from core.apps.content.models import (
     Cadr,
-    Category,
+    CategoryItem,
+    CategoryList,
     Content,
-    Genre,
+    GenreItem,
+    GenreList,
     Istory,
     IstoryVideo,
     Tag,
@@ -47,8 +49,10 @@ admin.site.register(Content, ContentAdmin)
 admin.site.register(VideoContent, VideoContentAdmin)
 
 admin.site.register(Cadr, CadrAdmin)
-admin.site.register(Genre, GenreAdmin)
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(GenreItem, ModelAdmin)
+admin.site.register(GenreList, GenreAdmin)
+admin.site.register(CategoryItem, ModelAdmin)
+admin.site.register(CategoryList, CategoryAdmin)
 admin.site.register(Tag, TagsAdmin)
 admin.site.register(IstoryVideo, ModelAdmin)
 admin.site.register(Istory, ModelAdmin)
