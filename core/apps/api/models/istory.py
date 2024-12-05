@@ -5,7 +5,7 @@ from core.http.models import AbstractBaseModel
 
 
 class IstoryModel(AbstractBaseModel):
-    content = models.CharField(verbose_name=_("content"), max_length=255)
+    content = models.TextField(verbose_name=_("content"))
     videos = models.ManyToManyField("IstoryVideoModel")
 
     def __str__(self):
@@ -21,7 +21,7 @@ class IstoryVideoModel(AbstractBaseModel):
     video = models.FileField(verbose_name=_("video"), upload_to="video/")
 
     def __str__(self):
-        return self.video
+        return self.video.name
 
     class Meta:
         db_table = "istoryvideo"

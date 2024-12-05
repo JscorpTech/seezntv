@@ -12,7 +12,7 @@ class MediaModel(AbstractBaseModel):
     position = models.PositiveIntegerField(verbose_name=_("position"), null=True, blank=True)
 
     def __str__(self) -> str:
-        return self.video
+        return self.video.name
 
     class Meta:
         ordering = ["-position"]

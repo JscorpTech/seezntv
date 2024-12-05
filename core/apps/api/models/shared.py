@@ -32,7 +32,7 @@ class CadrModel(AbstractBaseModel):
     image = models.FileField(verbose_name=_("image"), upload_to="cadr/")
 
     def __str__(self):
-        return self.image
+        return self.image.name
 
     class Meta:
         db_table = "cadr"

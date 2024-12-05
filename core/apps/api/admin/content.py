@@ -6,7 +6,11 @@ from ..models import ContentModel
 
 @admin.register(ContentModel)
 class ContentAdmin(ModelAdmin):
-    list_display = ("__str__",)
+    list_display = (
+        "__str__",
+        "created_at",
+        "updated_at",
+    )
     autocomplete_fields = (
         "genre",
         "ova",
