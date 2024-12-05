@@ -7,7 +7,7 @@ from unfold.forms import ActionForm
 
 
 @admin.register(BannerModel)
-class BannerAdmin(SortableAdminMixin, ModelAdmin, TabbedTranslationAdmin):
+class BannerAdmin(TabbedTranslationAdmin, SortableAdminMixin, ModelAdmin):
     action_form = ActionForm
     list_display = (
         "id",
@@ -18,6 +18,7 @@ class BannerAdmin(SortableAdminMixin, ModelAdmin, TabbedTranslationAdmin):
         "position",
     )
     ordering = ['position']
+    readonly_fields = ['position']
     autocomplete_fields = [
         "film",
     ]

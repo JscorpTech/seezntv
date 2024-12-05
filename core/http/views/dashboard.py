@@ -1,46 +1,62 @@
+from django.utils.translation import gettext as _
+from core.apps.api import models
+from ..models import User
+
+
 def dashboard_callback(request, context):
+    data = {
+        "films": models.ContentModel.objects.count(),
+        "categories": models.CategoryModel.objects.count(),
+        "tags": models.TagModel.objects.count(),
+        "genres": models.GenreModel.objects.count(),
+        "contents": models.ContentModel.objects.count(),
+        "users": User.objects.count(),
+        "banners": models.BannerModel.objects.count(),
+        "stories": models.IstoryModel.objects.count(),
+    }
+
     context.update(
         {
             "cards": (
                 {
                     "color": "blue",
-                    "value": 10000,
-                    "title": "Shartnomalar",
+                    "value": data["films"],
+                    "title": _("films"),
                 },
                 {
                     "color": "primary",
-                    "value": 10000,
-                    "title": "Tugallangan",
+                    "value": data['categories'],
+                    "title": _("categories"),
                 },
                 {
                     "color": "orange",
-                    "value": 10000,
-                    "title": "Kutilmoqda",
+                    "value": data['tags'],
+                    "title": _("tags"),
                 },
                 {
                     "color": "red",
-                    "value": 10000,
-                    "title": "Bekor qilingan",
+                    "value": data['genres'],
+                    "title": _("genres"),
                 },
                 {
                     "color": "green",
-                    "value": 10000,
-                    "title": "Bajarilmoqda",
+                    "value": data['contents'],
+                    "title": _("contents"),
                 },
                 {
                     "color": "red",
-                    "value": "{:,} so'm".format(10000),
-                    "title": "Qarizlar",
+                    "value": data['users'],
+                    "title": _("users"),
                 },
                 {
                     "color": "green",
-                    "value": "{:,} so'm".format(10000),
-                    "title": "To'langan",
+                    "value": data['banners'],
+                    "title": _("banners"),
                 },
                 {
                     "color": "green",
-                    "value": "{:,} so'm".format(10000),
-                    "title": "Jami summa",
+                    "value": data['stories'],
+                    "title": _("stories"),
                 },
             ),
         }
