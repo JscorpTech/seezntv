@@ -22,3 +22,10 @@ platformdirs
 psycopg2-binary
 tomli
 django-silk==5.3.1
+
+# !NOTE: on-storage
+django-storages
+boto3
+
+# !NOTE: on-admin
+django-admin-sortable2

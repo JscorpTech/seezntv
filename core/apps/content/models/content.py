@@ -1,4 +1,5 @@
 from django.db import models
+
 from core.apps.content.models.cadr import Cadr
 from core.apps.content.models.category import CategoryList
 from core.apps.content.models.genre import GenreList

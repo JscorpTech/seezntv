@@ -69,7 +69,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "silk.middleware.SilkyMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -141,7 +140,7 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = "uz"
 LANGUAGE_CODE = "uz"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "resources/media")  # Media files
-MEDIA_URL = "/resources/media/"
+MEDIA_URL = "http://146.0.75.247:2300/seezntv/"
 
 AUTH_USER_MODEL = "http.User"
 
@@ -150,5 +149,3 @@ CELERY_RESULT_BACKEND = env("RABBITMQ_RESULT_BACKEND")
 
 ALLOWED_HOSTS += env("ALLOWED_HOSTS").split(",")
 CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS").split(",")
-
-SILKY_PERMISSIONS = lambda user: user.is_superuser
