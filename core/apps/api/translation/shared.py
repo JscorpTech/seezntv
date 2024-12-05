@@ -5,14 +5,20 @@ from ..models import CategoryModel, GenreModel, TagModel
 
 @register(CategoryModel)
 class CategoryTranslation(TranslationOptions):
-    fields = []
+    fields = [
+        "name"
+    ]
 
 
 @register(GenreModel)
 class GenreTranslation(TranslationOptions):
-    fields = []
+    fields = [
+        "name"
+    ]
 
 
 @register(TagModel)
 class TagTranslation(TranslationOptions):
-    fields = []
+    fields = [
+        "name"
+    ]

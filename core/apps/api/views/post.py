@@ -4,10 +4,11 @@ from rest_framework.permissions import AllowAny
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from ..models import PostModel
-from ..serializers.post import (CreatePostSerializer, ListPostSerializer,
-                                RetrievePostSerializer)
+from ..serializers.post import CreatePostSerializer, ListPostSerializer, RetrievePostSerializer
+from drf_spectacular.utils import extend_schema
 
 
+@extend_schema(tags=["post"], deprecated=True)
 class PostView(ReadOnlyModelViewSet):
     queryset = PostModel.objects.all()
 

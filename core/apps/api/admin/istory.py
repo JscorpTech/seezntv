@@ -1,12 +1,14 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin
+from modeltranslation.admin import TabbedTranslationAdmin
 
 from ..models import IstoryModel, IstoryVideoModel
 
 
 @admin.register(IstoryModel)
-class IstoryAdmin(ModelAdmin):
+class IstoryAdmin(ModelAdmin, TabbedTranslationAdmin):
     list_display = (
+        "id",
         "__str__",
         "created_at",
         "updated_at",
@@ -16,5 +18,5 @@ class IstoryAdmin(ModelAdmin):
 
 @admin.register(IstoryVideoModel)
 class IstoryvideoAdmin(ModelAdmin):
-    list_display = ("__str__",)
+    list_display = ("id", "__str__",)
     search_fields = ("video",)

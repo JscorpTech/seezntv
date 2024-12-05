@@ -5,4 +5,7 @@ from ..models import ContentModel
 
 @register(ContentModel)
 class ContentTranslation(TranslationOptions):
-    fields = []
+    fields = [
+        "title",
+        "description"
+    ]

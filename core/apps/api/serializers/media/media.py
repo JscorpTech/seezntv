@@ -6,7 +6,10 @@ from ...models import MediaModel
 class BaseMediaSerializer(serializers.ModelSerializer):
     class Meta:
         model = MediaModel
-        exclude = []
+        exclude = [
+            "created_at",
+            "updated_at",
+        ]
 
 
 class ListMediaSerializer(BaseMediaSerializer):

@@ -6,7 +6,10 @@ from ...models import IstoryModel
 class BaseIstorySerializer(serializers.ModelSerializer):
     class Meta:
         model = IstoryModel
-        exclude = []
+        fields = (
+            "id",
+            "content"
+        )
 
 
 class ListIstorySerializer(BaseIstorySerializer):
