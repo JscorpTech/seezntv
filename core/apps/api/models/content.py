@@ -36,6 +36,6 @@ class ContentModel(AbstractBaseModel):
         return self.title
 
     class Meta:
-        db_table = "content"
+        db_table = "contents"
         verbose_name = _("ContentModel")
         verbose_name_plural = _("ContentModels")
