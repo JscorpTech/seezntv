@@ -19,10 +19,8 @@ class ContentModel(AbstractBaseModel):
 
     genre = models.ManyToManyField(verbose_name=_("genre"), to="GenreModel")
     tags = models.ManyToManyField(verbose_name=_("tags"), to="TagModel", blank=True)
-    cadrs = models.ManyToManyField(verbose_name=_("kadrs"), to="CadrModel", blank=True)
     category = models.ManyToManyField(verbose_name=_("category"), to="CategoryModel")
 
-    contents = models.ManyToManyField(verbose_name=_("contents"), to="MediaModel", related_name="contents")
     ova = models.ManyToManyField(verbose_name=_("ova"), to="MediaModel", blank=True, related_name="ova")
     chronology = models.ManyToManyField(
         verbose_name=_("chronology"), to="MediaModel", blank=True, related_name="chronology"
