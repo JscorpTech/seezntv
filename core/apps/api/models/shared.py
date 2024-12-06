@@ -32,7 +32,7 @@ class GenreModel(AbstractBaseModel):
 
 class CadrModel(AbstractBaseModel):
     image = models.ImageField(verbose_name=_("image"), upload_to="cadr/", max_length=255)
-    content = models.ForeignKey("ContentModel", on_delete=models.CASCADE, null=True)
+    content = models.ForeignKey("ContentModel", on_delete=models.CASCADE, null=True, related_name="cadrs")
 
     def __str__(self):
         return self.image.name
