@@ -31,7 +31,8 @@ class GenreModel(AbstractBaseModel):
 
 
 class CadrModel(AbstractBaseModel):
-    image = models.FileField(verbose_name=_("image"), upload_to="cadr/", max_length=255)
+    image = models.ImageField(verbose_name=_("image"), upload_to="cadr/", max_length=255)
+    content = models.ForeignKey("ContentModel", on_delete=models.CASCADE, null=True, related_name="cadrs")
 
     def __str__(self):
         return self.image.name
@@ -56,6 +57,7 @@ class TagModel(AbstractBaseModel):
 
 class IntervalModel(AbstractBaseModel):
     items = models.ManyToManyField(verbose_name=_("items"), to="MediaModel")
+    content = models.ForeignKey("ContentModel", verbose_name=_("content"), on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return f"Object {self.id}"

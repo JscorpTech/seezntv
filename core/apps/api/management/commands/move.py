@@ -72,7 +72,28 @@ class Command(management.BaseCommand):
                 )[0]
                 content.ova.add(media)
 
+    def import_video(self):
+        content = mm.ContentModel.objects.all()
+        for i in content:
+            for media in i.contents.all():
+                mm.VideoModel.objects.create(
+                    video=media.video,
+                    name=media.name,
+                    content=i,
+                    skip_start_time=media.skip_start_time,
+                    skip_end_time=media.skip_end_time,
+                    position=media.position,
+                )
+
+    def import_cadrs(self):
+        content = mm.ContentModel.objects.all()
+        for i in content:
+            for cadr in i.cadrs.all():
+                cadr.content = i
+                cadr.save()
+
     def handle(self, *args, **options) -> str | None:
-        self.import_content()
+        self.import_cadrs()
+        # self.import_content()
         # self.import_istory()
         # self.import_cadr()

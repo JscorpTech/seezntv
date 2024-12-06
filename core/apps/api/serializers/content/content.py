@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from ...models import ContentModel
-from ..shared import ListTagSerializer, ListGenreSerializer, ListCategorySerializer
+from ..shared import ListTagSerializer, ListGenreSerializer, ListCategorySerializer, ListCadrSerializer
 from ..media import ListMediaSerializer
 
 
@@ -12,17 +12,16 @@ class BaseContentSerializer(serializers.ModelSerializer):
     contents = ListMediaSerializer(many=True)
     ova = ListMediaSerializer(many=True)
     chronology = ListMediaSerializer(many=True)
+    cadrs = ListCadrSerializer(many=True)
 
     class Meta:
         model = ContentModel
         exclude = [
             "created_at",
             "updated_at",
-
             "title_uz",
             "title_en",
             "title_ru",
-
             "description_uz",
             "description_en",
             "description_ru",
@@ -42,7 +41,7 @@ class ListContentSerializer(BaseContentSerializer):
             "poster_mobile",
             "poster_card",
             "poster_video",
-            "created_at"
+            "created_at",
         ]
 
 

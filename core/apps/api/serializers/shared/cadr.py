@@ -6,7 +6,10 @@ from ...models import CadrModel
 class BaseCadrSerializer(serializers.ModelSerializer):
     class Meta:
         model = CadrModel
-        exclude = []
+        exclude = [
+            "created_at",
+            "updated_at"
+        ]
 
 
 class ListCadrSerializer(BaseCadrSerializer):
