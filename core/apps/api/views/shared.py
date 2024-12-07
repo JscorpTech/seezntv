@@ -1,15 +1,22 @@
 from typing import Any
 
-from rest_framework.permissions import AllowAny
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from drf_spectacular.utils import extend_schema
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.viewsets import ReadOnlyModelViewSet, GenericViewSet
+from rest_framework.decorators import action
+from rest_framework.mixins import CreateModelMixin
+from core.http.paginations import CustomPagination
 
-from ..models import CategoryModel, GenreModel, IntervalModel, TagModel
+
+from ..models import CategoryModel, CommentModel, GenreModel, IntervalModel, TagModel
 from ..serializers.shared import (
     CreateCategorySerializer,
+    CreateCommentSerializer,
     CreateGenreSerializer,
     CreateIntervalSerializer,
     CreateTagSerializer,
     ListCategorySerializer,
+    ListCommentSerializer,
     ListGenreSerializer,
     ListIntervalSerializer,
     ListTagSerializer,
@@ -18,7 +25,6 @@ from ..serializers.shared import (
     RetrieveIntervalSerializer,
     RetrieveTagSerializer,
 )
-from drf_spectacular.utils import extend_schema
 
 
 @extend_schema(tags=["category"])
@@ -114,6 +120,39 @@ class IntervalView(ReadOnlyModelViewSet):
     def get_permissions(self) -> Any:
         perms = []
         match self.action:
+            case _:
+                perms.extend([AllowAny])
+        self.permission_classes = perms
+        return super().get_permissions()
+
+
+@extend_schema(tags=["comment"])
+class CommentView(CreateModelMixin, GenericViewSet):
+    queryset = CommentModel.objects.order_by("-created_at").all()
+
+    @action(methods=["GET"], detail=True)
+    def comments(self, request, pk):
+        paginator = CustomPagination()
+        queryset = paginator.paginate_queryset(self.get_queryset(), request)
+        return paginator.get_paginated_response(self.get_serializer(queryset, many=True).data)
+
+    def get_serializer_class(self) -> Any:
+        match self.action:
+            case "list":
+                return ListCommentSerializer
+            case "create":
+                return CreateCommentSerializer
+            case _:
+                return ListCommentSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def get_permissions(self) -> Any:
+        perms = []
+        match self.action:
+            case "create":
+                perms.extend([IsAuthenticated])
             case _:
                 perms.extend([AllowAny])
         self.permission_classes = perms

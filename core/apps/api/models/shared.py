@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from core.http.models import User
 
 from core.http.models import AbstractBaseModel
 
@@ -66,3 +67,17 @@ class IntervalModel(AbstractBaseModel):
         db_table = "interval"
         verbose_name = _("IntervalModel")
         verbose_name_plural = _("IntervalModels")
+
+
+class CommentModel(AbstractBaseModel):
+    text = models.TextField(verbose_name=_("text"))
+    user = models.ForeignKey(User, verbose_name=_("user"), on_delete=models.CASCADE)
+    content = models.ForeignKey("ContentModel", verbose_name=_("content"), on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.text
+
+    class Meta:
+        db_table = "comment"
+        verbose_name = _("CommentModel")
+        verbose_name_plural = _("CommentModels")

@@ -41,6 +41,8 @@ class ListContentSerializer(BaseContentSerializer):
             "poster_mobile",
             "poster_card",
             "poster_video",
+            "release_date",
+            "age_limit",
             "created_at",
         ]
 
