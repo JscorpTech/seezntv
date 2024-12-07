@@ -7,3 +7,7 @@ class CategoryTest(TestCase):
 
 class CadrTest(TestCase):
     def setUp(self): ...
+
+
+class CommentTest(TestCase):
+    def setUp(self): ...

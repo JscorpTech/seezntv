@@ -1,17 +1,17 @@
-from django.contrib import admin
-from unfold.admin import ModelAdmin
-from modeltranslation.admin import TabbedTranslationAdmin
 from adminsortable2.admin import SortableAdminMixin
+from django.contrib import admin
+from modeltranslation.admin import TabbedTranslationAdmin
+from unfold.admin import ModelAdmin
 from unfold.forms import ActionForm
 
-from ..models import CadrModel, CategoryModel, GenreModel, IntervalModel, TagModel
+from ..models import CadrModel, CategoryModel, CommentModel, GenreModel, IntervalModel, TagModel
 
 
 @admin.register(CategoryModel)
 class CategoryAdmin(SortableAdminMixin, ModelAdmin, TabbedTranslationAdmin):
     action_form = ActionForm
     list_display = ("id", "__str__", "position")
-    ordering = ['position']
+    ordering = ["position"]
     search_fields = ("name",)
     readonly_fields = ["position"]
 
@@ -50,3 +50,11 @@ class IntervalAdmin(ModelAdmin):
         "__str__",
     )
     search_fields = ("items__video",)
+
+
+@admin.register(CommentModel)
+class CommentAdmin(ModelAdmin):
+    list_display = (
+        "id",
+        "__str__",
+    )
