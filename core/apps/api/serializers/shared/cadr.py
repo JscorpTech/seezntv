@@ -8,7 +8,8 @@ class BaseCadrSerializer(serializers.ModelSerializer):
         model = CadrModel
         exclude = [
             "created_at",
-            "updated_at"
+            "updated_at",
+            "content",
         ]
 
 

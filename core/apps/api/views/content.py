@@ -6,14 +6,28 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from ..models import ContentModel
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter
 from ..serializers.content import CreateContentSerializer, ListContentSerializer, RetrieveContentSerializer
 from drf_spectacular.utils import extend_schema
+from core.services import FilterService
 
 
 @extend_schema(tags=["content"], description="Filmlar")
 class ContentView(ReadOnlyModelViewSet):
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ("genre__name",)
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    search_fields = FilterService.get_fields_locale(
+        [
+            "title",
+            "genre__name",
+            "tags__name",
+            "category__name",
+        ]
+    )
+    filterset_fields = (
+        "genre",
+        "tags",
+        "category",
+    )
 
     def get_queryset(self) -> QuerySet:
         query = ContentModel.objects.all()
