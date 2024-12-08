@@ -7,13 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0010_intervalmodel_content'),
+        ("api", "0010_intervalmodel_content"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='cadrmodel',
-            name='content',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='api.contentmodel'),
+            model_name="cadrmodel",
+            name="content",
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to="api.contentmodel"),
         ),
     ]

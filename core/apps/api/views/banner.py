@@ -14,7 +14,7 @@ class BannerView(ReadOnlyModelViewSet):
     pagination_class = None
 
     def get_queryset(self) -> QuerySet:
-        return BannerModel.objects.prefetch_related(
+        return BannerModel.objects.order_by("position").prefetch_related(
             "film__tags",
             "film__genre",
         )

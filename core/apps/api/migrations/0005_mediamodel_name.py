@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0004_alter_contentmodel_poster_card_and_more'),
+        ("api", "0004_alter_contentmodel_poster_card_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='mediamodel',
-            name='name',
-            field=models.CharField(blank=True, max_length=255, null=True, verbose_name='name'),
+            model_name="mediamodel",
+            name="name",
+            field=models.CharField(blank=True, max_length=255, null=True, verbose_name="name"),
         ),
     ]

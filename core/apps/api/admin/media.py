@@ -6,5 +6,8 @@ from ..models import MediaModel
 
 @admin.register(MediaModel)
 class MediaAdmin(ModelAdmin):
-    list_display = ("id", "__str__",)
+    list_display = (
+        "id",
+        "__str__",
+    )
     search_fields = ("video",)

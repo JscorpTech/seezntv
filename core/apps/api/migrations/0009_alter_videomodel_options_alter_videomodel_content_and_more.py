@@ -7,21 +7,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0008_remove_contentmodel_contents'),
+        ("api", "0008_remove_contentmodel_contents"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='videomodel',
-            options={'ordering': ['position'], 'verbose_name': 'VideoModel', 'verbose_name_plural': 'VideoModels'},
+            name="videomodel",
+            options={"ordering": ["position"], "verbose_name": "VideoModel", "verbose_name_plural": "VideoModels"},
         ),
         migrations.AlterField(
-            model_name='videomodel',
-            name='content',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='contents', to='api.contentmodel', verbose_name='content'),
+            model_name="videomodel",
+            name="content",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="contents",
+                to="api.contentmodel",
+                verbose_name="content",
+            ),
         ),
         migrations.AlterUniqueTogether(
-            name='videomodel',
-            unique_together={('content', 'position')},
+            name="videomodel",
+            unique_together={("content", "position")},
         ),
     ]

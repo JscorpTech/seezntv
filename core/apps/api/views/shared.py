@@ -29,7 +29,7 @@ from ..serializers.shared import (
 
 @extend_schema(tags=["category"])
 class CategoryView(ReadOnlyModelViewSet):
-    queryset = CategoryModel.objects.all()
+    queryset = CategoryModel.objects.order_by("position").all()
     pagination_class = None
 
     def get_serializer_class(self) -> Any:
@@ -133,7 +133,8 @@ class CommentView(CreateModelMixin, GenericViewSet):
     @action(methods=["GET"], detail=True)
     def comments(self, request, pk):
         paginator = CustomPagination()
-        queryset = paginator.paginate_queryset(self.get_queryset(), request)
+        queryset = CommentModel.objects.filter(content_id=pk).order_by("-created_at").all()
+        queryset = paginator.paginate_queryset(queryset, request)
         return paginator.get_paginated_response(self.get_serializer(queryset, many=True).data)
 
     def get_serializer_class(self) -> Any:

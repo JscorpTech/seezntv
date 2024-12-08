@@ -10,19 +10,16 @@ from adminsortable2.admin import SortableAdminMixin
 @admin.register(IstoryModel)
 class IstoryAdmin(SortableAdminMixin, ModelAdmin, TabbedTranslationAdmin):
     action_form = ActionForm
-    ordering = ['position']
-    readonly_fields = ['position']
-    list_display = (
-        "id",
-        "__str__",
-        "created_at",
-        "updated_at",
-        "position"
-    )
+    ordering = ["position"]
+    readonly_fields = ["position"]
+    list_display = ("id", "__str__", "created_at", "updated_at", "position")
     autocomplete_fields = ("videos",)
 
 
 @admin.register(IstoryVideoModel)
 class IstoryvideoAdmin(ModelAdmin):
-    list_display = ("id", "__str__",)
+    list_display = (
+        "id",
+        "__str__",
+    )
     search_fields = ("video",)

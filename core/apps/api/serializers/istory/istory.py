@@ -6,10 +6,7 @@ from ...models import IstoryModel
 class BaseIstorySerializer(serializers.ModelSerializer):
     class Meta:
         model = IstoryModel
-        fields = (
-            "id",
-            "content"
-        )
+        fields = ("id", "content")
 
 
 class ListIstorySerializer(BaseIstorySerializer):
