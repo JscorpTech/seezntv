@@ -23,7 +23,4 @@ class RetrieveCommentSerializer(BaseCommentSerializer):
 class CreateCommentSerializer(BaseCommentSerializer):
     class Meta(BaseCommentSerializer.Meta):
         exclude = None
-        fields = [
-            "text",
-            "content",
-        ]
+        fields = ["text", "content", "parent"]

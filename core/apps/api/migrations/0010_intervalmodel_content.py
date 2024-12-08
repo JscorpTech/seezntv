@@ -7,13 +7,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0009_alter_videomodel_options_alter_videomodel_content_and_more'),
+        ("api", "0009_alter_videomodel_options_alter_videomodel_content_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='intervalmodel',
-            name='content',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='api.contentmodel', verbose_name='content'),
+            model_name="intervalmodel",
+            name="content",
+            field=models.ForeignKey(
+                null=True, on_delete=django.db.models.deletion.CASCADE, to="api.contentmodel", verbose_name="content"
+            ),
         ),
     ]

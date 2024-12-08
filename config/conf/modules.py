@@ -1,4 +1,1 @@
-MODULES = [
-    "core.apps.content",
-    "core.apps.api"
-]
+MODULES = ["core.apps.content", "core.apps.api"]

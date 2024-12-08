@@ -6,10 +6,7 @@ from ...models import CategoryModel
 class BaseCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = CategoryModel
-        fields = (
-            "id",
-            "name"
-        )
+        fields = ("id", "name")
 
 
 class ListCategorySerializer(BaseCategorySerializer):

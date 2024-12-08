@@ -5,6 +5,4 @@ from ..models import IstoryModel
 
 @register(IstoryModel)
 class IstoryTranslation(TranslationOptions):
-    fields = [
-        "content"
-    ]
+    fields = ["content"]
