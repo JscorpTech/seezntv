@@ -73,6 +73,7 @@ class CommentModel(AbstractBaseModel):
     text = models.TextField(verbose_name=_("text"))
     user = models.ForeignKey(User, verbose_name=_("user"), on_delete=models.CASCADE)
     content = models.ForeignKey("ContentModel", verbose_name=_("content"), on_delete=models.CASCADE)
+    parent = models.ForeignKey("CommentModel", on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.text

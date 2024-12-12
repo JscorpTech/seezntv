@@ -16,4 +16,4 @@ class BannerModel(AbstractBaseModel):
         db_table = "banner"
         verbose_name = _("BannerModel")
         verbose_name_plural = _("BannerModels")
-        ordering = ['position']
+        ordering = ["position"]

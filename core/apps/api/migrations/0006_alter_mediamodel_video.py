@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0005_mediamodel_name'),
+        ("api", "0005_mediamodel_name"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='mediamodel',
-            name='video',
-            field=models.CharField(max_length=255, verbose_name='video'),
+            model_name="mediamodel",
+            name="video",
+            field=models.CharField(max_length=255, verbose_name="video"),
         ),
     ]

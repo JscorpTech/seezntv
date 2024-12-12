@@ -6,33 +6,33 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0003_alter_cadrmodel_image'),
+        ("api", "0003_alter_cadrmodel_image"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='contentmodel',
-            name='poster_card',
-            field=models.ImageField(max_length=255, upload_to='poster/', verbose_name='poster_card'),
+            model_name="contentmodel",
+            name="poster_card",
+            field=models.ImageField(max_length=255, upload_to="poster/", verbose_name="poster_card"),
         ),
         migrations.AlterField(
-            model_name='contentmodel',
-            name='poster_desktop',
-            field=models.ImageField(max_length=255, upload_to='poster/', verbose_name='poster_desktop'),
+            model_name="contentmodel",
+            name="poster_desktop",
+            field=models.ImageField(max_length=255, upload_to="poster/", verbose_name="poster_desktop"),
         ),
         migrations.AlterField(
-            model_name='contentmodel',
-            name='poster_mobile',
-            field=models.ImageField(max_length=255, upload_to='poster/', verbose_name='poster_mobile'),
+            model_name="contentmodel",
+            name="poster_mobile",
+            field=models.ImageField(max_length=255, upload_to="poster/", verbose_name="poster_mobile"),
         ),
         migrations.AlterField(
-            model_name='contentmodel',
-            name='poster_video',
-            field=models.FileField(max_length=255, upload_to='poster/', verbose_name='poster_video'),
+            model_name="contentmodel",
+            name="poster_video",
+            field=models.FileField(max_length=255, upload_to="poster/", verbose_name="poster_video"),
         ),
         migrations.AlterField(
-            model_name='mediamodel',
-            name='video',
-            field=models.FileField(max_length=255, upload_to='video/', verbose_name='video'),
+            model_name="mediamodel",
+            name="video",
+            field=models.FileField(max_length=255, upload_to="video/", verbose_name="video"),
         ),
     ]

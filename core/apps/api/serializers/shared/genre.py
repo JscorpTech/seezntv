@@ -6,10 +6,7 @@ from ...models import GenreModel
 class BaseGenreSerializer(serializers.ModelSerializer):
     class Meta:
         model = GenreModel
-        fields = [
-            "id",
-            "name"
-        ]
+        fields = ["id", "name"]
 
 
 class ListGenreSerializer(BaseGenreSerializer):

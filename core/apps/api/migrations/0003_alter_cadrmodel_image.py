@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0002_alter_contentmodel_table'),
+        ("api", "0002_alter_contentmodel_table"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='cadrmodel',
-            name='image',
-            field=models.FileField(max_length=255, upload_to='cadr/', verbose_name='image'),
+            model_name="cadrmodel",
+            name="image",
+            field=models.FileField(max_length=255, upload_to="cadr/", verbose_name="image"),
         ),
     ]

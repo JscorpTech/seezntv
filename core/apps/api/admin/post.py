@@ -6,4 +6,7 @@ from ..models import PostModel
 
 @admin.register(PostModel)
 class PostAdmin(ModelAdmin):
-    list_display = ("id", "__str__",)
+    list_display = (
+        "id",
+        "__str__",
+    )

@@ -10,7 +10,7 @@ from drf_spectacular.utils import extend_schema
 
 @extend_schema(tags=["istory"])
 class IstoryView(ReadOnlyModelViewSet):
-    queryset = IstoryModel.objects.all()
+    queryset = IstoryModel.objects.order_by("position").all()
     pagination_class = None
 
     def get_serializer_class(self) -> Any:

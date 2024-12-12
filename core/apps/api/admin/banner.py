@@ -17,8 +17,8 @@ class BannerAdmin(TabbedTranslationAdmin, SortableAdminMixin, ModelAdmin):
         "updated_at",
         "position",
     )
-    ordering = ['position']
-    readonly_fields = ['position']
+    ordering = ["position"]
+    readonly_fields = ["position"]
     autocomplete_fields = [
         "film",
     ]

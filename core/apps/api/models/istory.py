@@ -16,7 +16,7 @@ class IstoryModel(AbstractBaseModel):
         db_table = "istory"
         verbose_name = _("IstoryModel")
         verbose_name_plural = _("IstoryModels")
-        ordering = ['position']
+        ordering = ["position"]
 
 
 class IstoryVideoModel(AbstractBaseModel):

@@ -1,4 +1,5 @@
 APPS = [
+    "cacheops",
     "rest_framework",
     "corsheaders",
     "django_filters",
