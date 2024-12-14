@@ -1,0 +1,30 @@
+{
+  "template": "git@github.com:JscorpTech/django.git",
+  "commit": "c0c6eed982fac3343664606a93f0fd463f91e968",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "seezntv",
+      "project_slug": "seezntv",
+      "settings_module": "config.settings.local",
+      "runner": "wsgi",
+      "celery": "no",
+      "cache": "yes",
+      "script": "entrypoint.sh",
+      "key": "Jscorp",
+      "port": "8081",
+      "phone": "998888112309",
+      "password": "2309",
+      "max_line_length": "120",
+      "silk": true,
+      "storage": true,
+      "channels": true,
+      "rosetta": true,
+      "cacheops": true,
+      "ckeditor": true,
+      "version": "0.1.0",
+      "_template": "git@github.com:JscorpTech/django.git"
+    }
+  },
+  "directory": null
+}

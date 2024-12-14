@@ -22,11 +22,11 @@ urlpatterns = [
 # Library urls
 ################
 urlpatterns += [
-    path("silk/", include("silk.urls", namespace="silk")),
     path("admin/", admin.site.urls),
     path("rosetta/", include("rosetta.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("i18n/", include("django.conf.urls.i18n")),
+    path('silk/', include('silk.urls', namespace='silk')),
     path("ckeditor5/", include("django_ckeditor_5.urls"), name="ck_editor_5_upload_file"),
 ]
 

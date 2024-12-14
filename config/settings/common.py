@@ -1,4 +1,3 @@
-import importlib
 import os
 import pathlib
 from typing import List, Union
@@ -9,7 +8,9 @@ from config.conf import *  # noqa
 from config.conf.apps import APPS
 from config.conf.modules import MODULES
 from config.env import env
-
+from rich.traceback import install
+ 
+install(show_locals=True)
 BASE_DIR = pathlib.Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = env.str("DJANGO_SECRET_KEY")
@@ -31,6 +32,7 @@ DATABASES = {
 
 INSTALLED_APPS = [
     "modeltranslation",
+    "core.apps.accounts",
     "unfold",
     "unfold.contrib.filters",
     "unfold.contrib.forms",
@@ -59,6 +61,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "silk.middleware.SilkyMiddleware",
+
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -97,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 TIME_ZONE = "Asia/Tashkent"
 USE_I18N = True
 USE_TZ = True
-STATIC_URL = "resource/static/"
+STATIC_URL = "resources/static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Date formats
@@ -107,7 +111,7 @@ TIME_FORMAT = "H:i:s"
 DATE_INPUT_FORMATS = ["%d.%m.%Y", "%Y.%d.%m", "%Y.%d.%m"]
 
 
-SEEDERS = ["core.http.seeder.UserSeeder"]
+SEEDERS = ["core.apps.accounts.seeder.UserSeeder"]
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "resources/static"),
@@ -132,10 +136,12 @@ LANGUAGE_CODE = "uz"
 MEDIA_ROOT = os.path.join(BASE_DIR, "resources/media")  # Media files
 MEDIA_URL = "http://146.0.75.247:2300/seezntv/"
 
-AUTH_USER_MODEL = "http.User"
+AUTH_USER_MODEL = "accounts.User"
 
 CELERY_BROKER_URL = env("RABBITMQ_URL")
 CELERY_RESULT_BACKEND = env("RABBITMQ_RESULT_BACKEND")
 
 ALLOWED_HOSTS += env("ALLOWED_HOSTS").split(",")
 CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS").split(",")
+SILKY_AUTHORISATION = True
+SILKY_PYTHON_PROFILER = True

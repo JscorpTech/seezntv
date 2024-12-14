@@ -5,8 +5,8 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.viewsets import ReadOnlyModelViewSet, GenericViewSet
 from rest_framework.decorators import action
 from rest_framework.mixins import CreateModelMixin
-from core.http.paginations import CustomPagination
-
+from django_core.paginations import CustomPagination
+from django_core.mixins import BaseViewSetMixin
 
 from ..models import CategoryModel, CommentModel, GenreModel, IntervalModel, TagModel
 from ..serializers.shared import (
@@ -28,7 +28,7 @@ from ..serializers.shared import (
 
 
 @extend_schema(tags=["category"])
-class CategoryView(ReadOnlyModelViewSet):
+class CategoryView(BaseViewSetMixin, ReadOnlyModelViewSet):
     queryset = CategoryModel.objects.order_by("position").all()
     pagination_class = None
 
@@ -53,7 +53,7 @@ class CategoryView(ReadOnlyModelViewSet):
 
 
 @extend_schema(tags=["genre"])
-class GenreView(ReadOnlyModelViewSet):
+class GenreView(BaseViewSetMixin, ReadOnlyModelViewSet):
     queryset = GenreModel.objects.all()
     pagination_class = None
 
@@ -78,7 +78,7 @@ class GenreView(ReadOnlyModelViewSet):
 
 
 @extend_schema(tags=["tag"])
-class TagView(ReadOnlyModelViewSet):
+class TagView(BaseViewSetMixin, ReadOnlyModelViewSet):
     queryset = TagModel.objects.all()
     pagination_class = None
 
@@ -103,7 +103,7 @@ class TagView(ReadOnlyModelViewSet):
 
 
 @extend_schema(["interval"])
-class IntervalView(ReadOnlyModelViewSet):
+class IntervalView(BaseViewSetMixin, ReadOnlyModelViewSet):
     queryset = IntervalModel.objects.all()
 
     def get_serializer_class(self) -> Any:
@@ -127,7 +127,7 @@ class IntervalView(ReadOnlyModelViewSet):
 
 
 @extend_schema(tags=["comment"])
-class CommentView(CreateModelMixin, GenericViewSet):
+class CommentView(BaseViewSetMixin, CreateModelMixin, GenericViewSet):
     queryset = CommentModel.objects.order_by("-created_at").all()
 
     @action(methods=["GET"], detail=True)

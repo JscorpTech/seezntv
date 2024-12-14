@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from core.http.models import User
+from django.contrib.auth import get_user_model
 
-from core.http.models import AbstractBaseModel
+
+from django_core.models import AbstractBaseModel
 
 
 class CategoryModel(AbstractBaseModel):
@@ -71,7 +72,7 @@ class IntervalModel(AbstractBaseModel):
 
 class CommentModel(AbstractBaseModel):
     text = models.TextField(verbose_name=_("text"))
-    user = models.ForeignKey(User, verbose_name=_("user"), on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), verbose_name=_("user"), on_delete=models.CASCADE)
     content = models.ForeignKey("ContentModel", verbose_name=_("content"), on_delete=models.CASCADE)
     parent = models.ForeignKey("CommentModel", on_delete=models.SET_NULL, null=True, blank=True)
 

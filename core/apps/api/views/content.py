@@ -10,10 +10,11 @@ from rest_framework.filters import SearchFilter
 from ..serializers.content import CreateContentSerializer, ListContentSerializer, RetrieveContentSerializer
 from drf_spectacular.utils import extend_schema
 from core.services import FilterService
+from django_core.mixins import BaseViewSetMixin
 
 
 @extend_schema(tags=["content"], description="Filmlar")
-class ContentView(ReadOnlyModelViewSet):
+class ContentView(BaseViewSetMixin, ReadOnlyModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter]
     search_fields = FilterService.get_fields_locale(
         [
