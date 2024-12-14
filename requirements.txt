@@ -22,6 +22,8 @@ platformdirs
 psycopg2-binary
 tomli
 django-silk==5.3.1
+django-cacheops
+gunicorn
 
 # !NOTE: on-storage
 django-storages

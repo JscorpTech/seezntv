@@ -48,23 +48,13 @@ MODULES = [app for app in MODULES if isinstance(app, str)]
 
 for module_path in MODULES:
     INSTALLED_APPS.append("{}.apps.ModuleConfig".format(module_path))
-    config_path = "{}.config".format(module_path)
-    if os.path.exists("{}.py".format(config_path.replace(".", "/"))):
-        module = importlib.import_module(config_path)
-        module_dict = module.__dict__
-        globals().update({k: v for k, v in module_dict.items() if not k.startswith("__")})
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",  # Cors middleware
     "django.middleware.locale.LocaleMiddleware",  # Locale middleware
-    "core.http.middlewares.CacheMiddleware",  # Cache middle
-    *(["django.middleware.cache.UpdateCacheMiddleware"] if env.bool("CACHE_ENABLED") else []),  # Update cache middle
     "django.middleware.common.CommonMiddleware",
-    *(
-        ["django.middleware.cache.FetchFromCacheMiddleware"] if env.bool("CACHE_ENABLED") else []
-    ),  # Fetch from cache middle
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",

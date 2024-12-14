@@ -93,7 +93,12 @@ class Command(management.BaseCommand):
                 cadr.save()
 
     def handle(self, *args, **options) -> str | None:
-        self.import_cadrs()
+        # self.import_cadrs()
         # self.import_content()
         # self.import_istory()
         # self.import_cadr()
+        contents = mm.ContentModel.objects.all()
+        from urllib.parse import unquote
+        for i in contents:
+            i.poster_desktop.name = unquote(i.poster_desktop.name)
+	        i.save()
