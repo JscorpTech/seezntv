@@ -6,10 +6,11 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 from ..models import IstoryModel
 from ..serializers.istory import CreateIstorySerializer, ListIstorySerializer, RetrieveIstorySerializer
 from drf_spectacular.utils import extend_schema
+from django_core.mixins import BaseViewSetMixin
 
 
 @extend_schema(tags=["istory"])
-class IstoryView(ReadOnlyModelViewSet):
+class IstoryView(BaseViewSetMixin, ReadOnlyModelViewSet):
     queryset = IstoryModel.objects.order_by("position").all()
     pagination_class = None
 

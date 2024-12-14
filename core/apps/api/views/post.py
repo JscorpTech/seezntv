@@ -6,10 +6,11 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 from ..models import PostModel
 from ..serializers.post import CreatePostSerializer, ListPostSerializer, RetrievePostSerializer
 from drf_spectacular.utils import extend_schema
+from django_core.mixins import BaseViewSetMixin
 
 
 @extend_schema(tags=["post"], deprecated=True)
-class PostView(ReadOnlyModelViewSet):
+class PostView(BaseViewSetMixin, ReadOnlyModelViewSet):
     queryset = PostModel.objects.all()
 
     def get_serializer_class(self) -> Any:

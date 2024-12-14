@@ -22,3 +22,6 @@ class User(auth_models.AbstractUser):
 
     def __str__(self):
         return self.phone
+
+    class Meta:
+        db_table = "http_user"

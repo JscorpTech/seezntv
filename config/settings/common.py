@@ -32,6 +32,7 @@ DATABASES = {
 
 INSTALLED_APPS = [
     "modeltranslation",
+    "core.apps.accounts",
     "unfold",
     "unfold.contrib.filters",
     "unfold.contrib.forms",

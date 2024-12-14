@@ -9,7 +9,6 @@ APPS = [
     "rest_framework_simplejwt",
     "django_ckeditor_5",
     "drf_spectacular",
-    "core.apps.accounts",
     "adminsortable2",
     "django_core",
 ]

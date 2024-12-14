@@ -6,3 +6,4 @@ from .logs import *  # noqa
 from .rest_framework import *  # noqa
 from .unfold import *  # noqa
 from .storage import *  # noqa
+from .spectacular import * # noqa

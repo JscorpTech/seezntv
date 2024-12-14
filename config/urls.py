@@ -22,7 +22,6 @@ urlpatterns = [
 # Library urls
 ################
 urlpatterns += [
-    path("silk/", include("silk.urls", namespace="silk")),
     path("admin/", admin.site.urls),
     path("rosetta/", include("rosetta.urls")),
     path("accounts/", include("django.contrib.auth.urls")),

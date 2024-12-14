@@ -6,11 +6,41 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from ..models import BannerModel
 from ..serializers.banner import CreateBannerSerializer, ListBannerSerializer, RetrieveBannerSerializer
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiExample
+from django_core.mixins import BaseViewSetMixin
+from django.utils.decorators import method_decorator
 
 
 @extend_schema(tags=["banner"])
-class BannerView(ReadOnlyModelViewSet):
+@method_decorator(
+    extend_schema(
+        responses={
+            200: OpenApiResponse(
+                response={
+                    "status": {
+                        "type": "boolean",
+                        "example": True,
+                    },
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "id": {"type": "integer", "example": 1},
+                            "name": {"type": "string", "example": "Banner name"},
+                        },
+                    },
+                },
+                examples=[
+                    OpenApiExample(
+                        "Success example",
+                        value={"status": True, "data": {"id": 1, "name": "Banner name"}},
+                    )
+                ],
+            ),
+        },
+    ),
+    name="retrieve",
+)
+class BannerView(BaseViewSetMixin, ReadOnlyModelViewSet):
     pagination_class = None
 
     def get_queryset(self) -> QuerySet:
