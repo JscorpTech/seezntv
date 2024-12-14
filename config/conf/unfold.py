@@ -36,6 +36,6 @@ UNFOLD = {
     "SIDEBAR": {
         "show_search": True,  # Search in applications and models names
         "show_all_applications": True,
-        "navigation": navigation.PAGES,
+        # "navigation": navigation.PAGES, # Pagelarni qo'lda qo'shish
     },
 }

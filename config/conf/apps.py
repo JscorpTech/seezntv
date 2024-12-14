@@ -1,4 +1,5 @@
 APPS = [
+    "silk",
     "cacheops",
     "rest_framework",
     "corsheaders",
@@ -8,7 +9,7 @@ APPS = [
     "rest_framework_simplejwt",
     "django_ckeditor_5",
     "drf_spectacular",
-    "core.http.HttpConfig",
-    "core.apps.accounts.apps.AccountsConfig",
+    "core.apps.accounts",
     "adminsortable2",
+    "django_core",
 ]

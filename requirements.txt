@@ -24,6 +24,9 @@ tomli
 django-silk==5.3.1
 django-cacheops
 gunicorn
+rich
+django-silk
+jst-django-core
 
 # !NOTE: on-storage
 django-storages

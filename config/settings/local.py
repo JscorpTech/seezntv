@@ -9,7 +9,7 @@ INSTALLED_APPS += [
 ALLOWED_HOSTS += ["127.0.0.1", "192.168.100.26"]
 
 REST_FRAMEWORK["DEFAULT_THROTTLE_RATES"] = {
-    "user": "30/min",
+    "user": "60/min",
 }
 MIDDLEWARE += [
     "silk.middleware.SilkyMiddleware",

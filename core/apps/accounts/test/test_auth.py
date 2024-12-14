@@ -7,9 +7,10 @@ from pydantic import BaseModel
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from core.apps.accounts.models import ResetToken, User
-from core.http.models import SmsConfirm
+from core.apps.accounts.models import ResetToken
+from django_core.models import SmsConfirm
 from core.services import SmsService
+from django.contrib.auth import get_user_model
 
 
 class TokenModel(BaseModel):
@@ -29,7 +30,7 @@ class SmsViewTest(TestCase):
         self.password = "password"
         self.code = "1111"
         self.token = "token"
-        self.user = User.objects.create_user(
+        self.user = get_user_model().create_user(
             phone=self.phone, first_name="John", last_name="Doe", password=self.password
         )
         SmsConfirm.objects.create(phone=self.phone, code=self.code)
@@ -45,7 +46,10 @@ class SmsViewTest(TestCase):
         with patch.object(SmsService, "send_confirm", return_value=True):
             response = self.client.post(reverse("register"), data=data)
             self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
-            self.assertEqual(response.data["detail"], "Sms %(phone)s raqamiga yuborildi" % {"phone": data["phone"]})
+            self.assertEqual(
+                response.data["detail"],
+                "Sms %(phone)s raqamiga yuborildi" % {"phone": data["phone"]},
+            )
 
     def test_confirm_view(self):
         """Test confirm view."""
@@ -87,7 +91,7 @@ class SmsViewTest(TestCase):
         """Test reset set password view with invalid token."""
         token = "test_token"
         data = {"token": token, "password": "new_password"}
-        with patch.object(User.objects, "filter", return_value=User.objects.none()):
+        with patch.object(get_user_model(), "filter", return_value=get_user_model().none()):
             response = self.client.post(reverse("set-password"), data=data)
             self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
             self.assertEqual(response.data["detail"], "Invalid token")
