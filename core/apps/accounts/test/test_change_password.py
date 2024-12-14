@@ -12,9 +12,11 @@ class ChangePasswordViewTest(TestCase):
         self.client = APIClient()
         self.phone = "9981111111"
         self.password = "12345670"
-        self.path = reverse("change-password")
+        self.path = reverse("change-password-change-password")
 
-        self.user = get_user_model().create_user(phone=self.phone, password=self.password, email="test@example.com")
+        self.user = get_user_model().objects.create_user(
+            phone=self.phone, password=self.password, email="test@example.com"
+        )
         self.client.force_authenticate(user=self.user)
 
     def test_change_password_success(self):
@@ -24,7 +26,7 @@ class ChangePasswordViewTest(TestCase):
         }
         response = self.client.post(self.path, data=data, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data["detail"], "password changed successfully")
+        self.assertEqual(response.data['data']["detail"], "password changed successfully")
         self.assertTrue(self.user.check_password("newpassword"))
 
     def test_change_password_invalid_old_password(self):
@@ -34,7 +36,7 @@ class ChangePasswordViewTest(TestCase):
         }
         response = self.client.post(self.path, data=data, format="json")
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
-        self.assertEqual(response.data["detail"], "invalida password")
+        self.assertEqual(response.data['data']["detail"], "invalida password")
 
     def test_change_password_serializer_validation(self):
         data = {
