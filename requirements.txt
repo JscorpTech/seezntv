@@ -26,7 +26,7 @@ django-cacheops
 gunicorn
 rich
 django-silk
-jst-django-core
+jst-django-core~=1.0.4
 
 # !NOTE: on-storage
 django-storages
