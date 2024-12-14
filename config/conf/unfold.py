@@ -1,7 +1,8 @@
 from . import navigation
 
+
 UNFOLD = {
-    "DASHBOARD_CALLBACK": "django_core.views.dashboard_callback",
+    "DASHBOARD_CALLBACK": "core.apps.api.views.dashboard.dashboard_callback",
     "SITE_TITLE": None,
     "SHOW_LANGUAGES": True,
     "SITE_HEADER": None,
