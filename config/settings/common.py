@@ -9,7 +9,7 @@ from config.conf.apps import APPS
 from config.conf.modules import MODULES
 from config.env import env
 from rich.traceback import install
- 
+
 install(show_locals=True)
 BASE_DIR = pathlib.Path(__file__).resolve().parent.parent.parent
 
@@ -29,6 +29,10 @@ DATABASES = {
         "PORT": env.str("DB_PORT"),
     }
 }
+
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.BCryptPasswordHasher",
+]
 
 INSTALLED_APPS = [
     "modeltranslation",
@@ -62,7 +66,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "silk.middleware.SilkyMiddleware",
-
 ]
 
 ROOT_URLCONF = "config.urls"
