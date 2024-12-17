@@ -26,6 +26,8 @@ django-cacheops
 gunicorn
 rich
 jst-django-core~=1.0.6
+pydantic
+bcrypt
 
 # !NOTE: on-storage
 django-storages
