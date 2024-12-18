@@ -2,16 +2,20 @@ from rest_framework import serializers
 
 from ...models import CommentModel
 from ..user import ListUserSerializer
+from core.utils.cache import Cache
 
 
 class BaseCommentSerializer(serializers.ModelSerializer):
     replies = serializers.SerializerMethodField()
     user = ListUserSerializer()
 
-    def get_replies(self, obj):
+    def __get_replies(self, obj):
         if obj.replies.exists():
-            return ListCommentSerializer(obj.replies.order_by("-created_at").all(), many=True).data
-        return None
+            return ListCommentSerializer(obj.replies.all(), many=True).data
+        return []
+
+    def get_replies(self, obj):
+        return Cache().remember(self.__get_replies, key="comment_replies_%s" % obj.id, timeout=1200, obj=obj)
 
     class Meta:
         model = CommentModel

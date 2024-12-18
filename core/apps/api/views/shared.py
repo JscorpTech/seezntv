@@ -7,6 +7,7 @@ from rest_framework.mixins import CreateModelMixin
 from django_core.paginations import CustomPagination
 from django_core.mixins import BaseViewSetMixin
 from ..models import CategoryModel, CommentModel, GenreModel, IntervalModel, TagModel
+
 from ..serializers.shared import (
     CreateCategorySerializer,
     CreateCommentSerializer,
@@ -23,6 +24,7 @@ from ..serializers.shared import (
     RetrieveIntervalSerializer,
     RetrieveTagSerializer,
 )
+from django.db import models
 
 
 @extend_schema(tags=["category"])
@@ -131,7 +133,25 @@ class CommentView(BaseViewSetMixin, CreateModelMixin, GenericViewSet):
     @extend_schema(responses={200: ListCommentSerializer(many=True)})
     def retrieve(self, request, pk):
         paginator = CustomPagination()
-        queryset = CommentModel.objects.filter(content_id=pk, parent__isnull=True).order_by("-created_at").all()
+        only_fields = (
+            "user__first_name",
+            "user__last_name",
+            "user__id",
+            "user__username",
+            "parent",
+            "id",
+            "text",
+        )
+        queryset = (
+            CommentModel.objects.filter(content_id=pk, parent__isnull=True)
+            .select_related("user")
+            .prefetch_related(
+                models.Prefetch("replies", CommentModel.objects.order_by("-created_at").only(*only_fields))
+            )
+            .only(*only_fields)
+            .order_by("-created_at")
+            .all()
+        )
         queryset = paginator.paginate_queryset(queryset, request)
         return paginator.get_paginated_response(self.get_serializer(queryset, many=True).data)
 
