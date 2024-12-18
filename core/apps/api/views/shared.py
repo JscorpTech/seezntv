@@ -3,11 +3,10 @@ from typing import Any
 from drf_spectacular.utils import extend_schema
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.viewsets import ReadOnlyModelViewSet, GenericViewSet
-from rest_framework.decorators import action
 from rest_framework.mixins import CreateModelMixin
 from django_core.paginations import CustomPagination
 from django_core.mixins import BaseViewSetMixin
-
+from django.db import models
 from ..models import CategoryModel, CommentModel, GenreModel, IntervalModel, TagModel
 from ..serializers.shared import (
     CreateCategorySerializer,
@@ -130,10 +129,10 @@ class IntervalView(BaseViewSetMixin, ReadOnlyModelViewSet):
 class CommentView(BaseViewSetMixin, CreateModelMixin, GenericViewSet):
     queryset = CommentModel.objects.order_by("-created_at").all()
 
-    @action(methods=["GET"], detail=True)
-    def comments(self, request, pk):
+    @extend_schema(responses={200: ListCommentSerializer(many=True)})
+    def retrieve(self, request, pk):
         paginator = CustomPagination()
-        queryset = CommentModel.objects.filter(content_id=pk).order_by("-created_at").all()
+        queryset = CommentModel.objects.filter(content_id=pk, parent__isnull=True).order_by("-created_at").all()
         queryset = paginator.paginate_queryset(queryset, request)
         return paginator.get_paginated_response(self.get_serializer(queryset, many=True).data)
 

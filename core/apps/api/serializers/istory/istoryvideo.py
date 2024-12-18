@@ -6,7 +6,10 @@ from ...models import IstoryVideoModel
 class BaseIstoryvideoSerializer(serializers.ModelSerializer):
     class Meta:
         model = IstoryVideoModel
-        exclude = []
+        exclude = [
+            "updated_at",
+            "created_at"
+        ]
 
 
 class ListIstoryvideoSerializer(BaseIstoryvideoSerializer):
