@@ -1,6 +1,6 @@
 from typing import Any
 
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import extend_schema, OpenApiResponse
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.viewsets import ReadOnlyModelViewSet, GenericViewSet
 from rest_framework.mixins import CreateModelMixin
