@@ -1,6 +1,6 @@
 {
   "template": "git@github.com:JscorpTech/django.git",
-  "commit": "92fbd746937e1b9f9093c1615938ff234e4f9915",
+  "commit": "675b170336e81bf911d6b7b58ee27ce79a83e013",
   "checkout": null,
   "context": {
     "cookiecutter": {
