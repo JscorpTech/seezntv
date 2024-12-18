@@ -130,7 +130,8 @@ class IntervalView(BaseViewSetMixin, ReadOnlyModelViewSet):
 class CommentView(BaseViewSetMixin, CreateModelMixin, GenericViewSet):
     queryset = CommentModel.objects.order_by("-created_at").all()
 
-    @action(methods=["GET"], detail=True)
+    @extend_schema(responses={200: ListCommentSerializer(many=True)})
+    @action(methods=["GET"], detail=True, url_path="show")
     def comments(self, request, pk):
         paginator = CustomPagination()
         queryset = CommentModel.objects.filter(content_id=pk).order_by("-created_at").all()
