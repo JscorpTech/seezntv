@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ] + APPS
 
+
 MODULES = [app for app in MODULES if isinstance(app, str)]
 
 for module_path in MODULES:
@@ -67,6 +68,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "silk.middleware.SilkyMiddleware",
 ]
+
+if env.str("PROJECT_ENV") == "debug":
+    MIDDLEWARE += ["silk.middleware.SilkyMiddleware"]
+
 
 ROOT_URLCONF = "config.urls"
 
