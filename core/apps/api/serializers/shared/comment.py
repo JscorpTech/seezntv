@@ -4,12 +4,16 @@ from ...models import CommentModel
 
 
 class BaseCommentSerializer(serializers.ModelSerializer):
+    replies = serializers.SerializerMethodField()
+
+    def get_replies(self, obj):
+        if obj.replies.exists():
+            return ListCommentSerializer(obj.replies.all(), many=True).data
+        return None
+
     class Meta:
         model = CommentModel
-        exclude = [
-            "created_at",
-            "updated_at",
-        ]
+        exclude = ["created_at", "updated_at", "parent"]
 
 
 class ListCommentSerializer(BaseCommentSerializer):
@@ -23,4 +27,9 @@ class RetrieveCommentSerializer(BaseCommentSerializer):
 class CreateCommentSerializer(BaseCommentSerializer):
     class Meta(BaseCommentSerializer.Meta):
         exclude = None
-        fields = ["text", "content", "parent"]
+        fields = [
+            "id",
+            "text",
+            "content",
+            "parent",
+        ]
