@@ -1,19 +1,26 @@
 from rest_framework import serializers
 
 from ...models import CommentModel
+from ..user import ListUserSerializer
 
 
 class BaseCommentSerializer(serializers.ModelSerializer):
     replies = serializers.SerializerMethodField()
+    user = ListUserSerializer()
 
     def get_replies(self, obj):
         if obj.replies.exists():
-            return ListCommentSerializer(obj.replies.all(), many=True).data
+            return ListCommentSerializer(obj.replies.order_by("-created_at").all(), many=True).data
         return None
 
     class Meta:
         model = CommentModel
-        exclude = ["created_at", "updated_at", "parent"]
+        exclude = [
+            "created_at",
+            "updated_at",
+            "parent",
+            "content",
+        ]
 
 
 class ListCommentSerializer(BaseCommentSerializer):
