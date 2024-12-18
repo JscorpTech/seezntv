@@ -6,7 +6,6 @@ from rest_framework.viewsets import ReadOnlyModelViewSet, GenericViewSet
 from rest_framework.mixins import CreateModelMixin
 from django_core.paginations import CustomPagination
 from django_core.mixins import BaseViewSetMixin
-from django.db import models
 from ..models import CategoryModel, CommentModel, GenreModel, IntervalModel, TagModel
 from ..serializers.shared import (
     CreateCategorySerializer,
