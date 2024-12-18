@@ -1,5 +1,6 @@
+from config.env import env
+
 APPS = [
-    "silk",
     "cacheops",
     "rest_framework",
     "corsheaders",
@@ -12,3 +13,9 @@ APPS = [
     "adminsortable2",
     "django_core",
 ]
+
+
+if env.str("PROJECT_ENV") == "debug":
+    APPS += [
+        "silk",
+    ]

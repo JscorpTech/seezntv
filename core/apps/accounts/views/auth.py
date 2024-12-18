@@ -27,7 +27,6 @@ from django.contrib.auth.hashers import make_password
 from drf_spectacular.utils import OpenApiResponse
 from rest_framework.permissions import IsAuthenticated
 from ..serializers import ChangePasswordSerializer
-from silk.profiling.profiler import silk_profile
 
 from .. import models
 
@@ -49,7 +48,6 @@ class RegisterView(BaseViewSetMixin, GenericViewSet, UserService):
                 return RegisterSerializer
 
     @action(methods=["POST"], detail=False, url_path="register")
-    @silk_profile()
     def register(self, request):
         ser = self.get_serializer(data=request.data)
         ser.is_valid(raise_exception=True)
