@@ -5,12 +5,13 @@ from django_core.models import AbstractBaseModel
 
 
 class IstoryModel(AbstractBaseModel):
-    content = models.TextField(verbose_name=_("content"))
+    desc = models.TextField(verbose_name=_("description"))
     videos = models.ManyToManyField("IstoryVideoModel")
+    image = models.ImageField(_("image"), upload_to="istory/", null=True)
     position = models.PositiveIntegerField(_("position"), default=0)
 
     def __str__(self):
-        return self.content
+        return self.desc
 
     class Meta:
         db_table = "istory"
