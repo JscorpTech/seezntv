@@ -67,7 +67,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
 if env.str("PROJECT_ENV") == "debug":
     MIDDLEWARE += ["silk.middleware.SilkyMiddleware"]
 
