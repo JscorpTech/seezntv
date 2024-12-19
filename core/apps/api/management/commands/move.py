@@ -99,6 +99,7 @@ class Command(management.BaseCommand):
         # self.import_cadr()
         contents = mm.ContentModel.objects.all()
         from urllib.parse import unquote
+
         for i in contents:
             i.poster_desktop.name = unquote(i.poster_desktop.name)
-	        i.save()
+            i.save()
