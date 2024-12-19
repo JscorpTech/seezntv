@@ -19,6 +19,7 @@ def custom_postprocessing_hook(result, generator, request, public):
                     if "content" in response:
                         for content_type, content in response["content"].items():
                             # Wrap original schema
+                            print(content)
                             original_schema = content.get("schema", {})
                             response["content"][content_type]["schema"] = {
                                 "type": "object",

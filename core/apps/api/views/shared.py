@@ -1,6 +1,6 @@
 from typing import Any
 
-from drf_spectacular.utils import extend_schema, OpenApiResponse
+from drf_spectacular.utils import extend_schema
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.viewsets import ReadOnlyModelViewSet, GenericViewSet
 from rest_framework.mixins import CreateModelMixin
@@ -130,7 +130,6 @@ class IntervalView(BaseViewSetMixin, ReadOnlyModelViewSet):
 class CommentView(BaseViewSetMixin, CreateModelMixin, GenericViewSet):
     queryset = CommentModel.objects.order_by("-created_at").all()
 
-    @extend_schema(responses={200: ListCommentSerializer(many=True)})
     def retrieve(self, request, pk):
         paginator = CustomPagination()
         only_fields = (
