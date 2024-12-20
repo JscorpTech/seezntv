@@ -1,5 +1,5 @@
 node_modules
-
+test.json
 # OS ignores
 *.DS_Store
 
