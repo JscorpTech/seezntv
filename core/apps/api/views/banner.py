@@ -12,34 +12,6 @@ from django.utils.decorators import method_decorator
 
 
 @extend_schema(tags=["banner"])
-@method_decorator(
-    extend_schema(
-        responses={
-            200: OpenApiResponse(
-                response={
-                    "status": {
-                        "type": "boolean",
-                        "example": True,
-                    },
-                    "data": {
-                        "type": "object",
-                        "properties": {
-                            "id": {"type": "integer", "example": 1},
-                            "name": {"type": "string", "example": "Banner name"},
-                        },
-                    },
-                },
-                examples=[
-                    OpenApiExample(
-                        "Success example",
-                        value={"status": True, "data": {"id": 1, "name": "Banner name"}},
-                    )
-                ],
-            ),
-        },
-    ),
-    name="retrieve",
-)
 class BannerView(BaseViewSetMixin, ReadOnlyModelViewSet):
     pagination_class = None
 
