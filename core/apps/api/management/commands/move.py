@@ -1,6 +1,7 @@
 from django.core import management
 from core.apps.content import models
 from core.apps.api import models as mm
+from django.core.files.storage import default_storage
 
 
 class Command(management.BaseCommand):
@@ -101,5 +102,5 @@ class Command(management.BaseCommand):
         from urllib.parse import unquote
 
         for i in contents:
-            i.poster_desktop.name = unquote(i.poster_desktop.name)
-            i.save()
+            print(default_storage.open(i.poster_desktop.name).url)
+            break

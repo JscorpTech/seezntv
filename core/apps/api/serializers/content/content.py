@@ -3,6 +3,7 @@ from rest_framework import serializers
 from ...models import ContentModel
 from ..shared import ListTagSerializer, ListGenreSerializer, ListCategorySerializer, ListCadrSerializer
 from ..media import ListMediaSerializer
+from core.utils import Url
 
 
 class BaseContentSerializer(serializers.ModelSerializer):
@@ -13,6 +14,18 @@ class BaseContentSerializer(serializers.ModelSerializer):
     ova = ListMediaSerializer(many=True)
     chronology = ListMediaSerializer(many=True)
     cadrs = ListCadrSerializer(many=True)
+
+    def to_representation(self, instance):
+        data = Url.unquote_if_exists(
+            super().to_representation(instance),
+            [
+                "poster_desktop",
+                "poster_mobile",
+                "poster_card",
+                "poster_video",
+            ],
+        )
+        return data
 
     class Meta:
         model = ContentModel
