@@ -2,7 +2,7 @@
 	"name": "Existing Dockerfile",
 	"build": {
 		"context": "..",
-		"dockerfile": "../Dockerfile"
+		"dockerfile": "../docker/Dockerfile.web"
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/python:1": {}
