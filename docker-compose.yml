@@ -5,6 +5,7 @@ networks:
 volumes:
   pg_data: null
   rabbitmq: null
+  pycache: null
 
 services:
   nginx:
@@ -27,9 +28,12 @@ services:
       context: .
       dockerfile: ./docker/Dockerfile.web
     restart: always
+    environment:
+      - PYTHONPYCACHEPREFIX=/var/cache/pycache
     command: ${COMMAND:-sh ./entrypoint.sh}
     volumes:
       - .:/code
+      - pycache:/var/cache/pycache
     depends_on:
       - db
       - redis

@@ -12,6 +12,7 @@ APPS = [
     "drf_spectacular",
     "adminsortable2",
     "django_core",
+    "click_up",
 ]
 
 
