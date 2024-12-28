@@ -34,6 +34,8 @@ class OrderView(BaseViewSetMixin, GenericViewSet):
             {
                 "detail": "Order yaratildi",
                 "order_id": order.id,
-                "payment_url": service.generate_link(order.id, order.amount, data.get("payment_type", "click")),
+                "payment_url": service.generate_link(
+                    order.id, order.amount, data.get("payment_type", data.get("payment_method"))
+                ),
             }
         )

@@ -10,6 +10,8 @@ class PaymentService:
         match service:
             case "click":
                 return self._generate_click_link(order, amount)
+            case "manual":
+                return None
             case _:
                 raise Exception("Service not supported")
 
