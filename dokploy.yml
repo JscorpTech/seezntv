@@ -27,6 +27,3 @@ services:
     volumes:
       - .:/code
       - ../files/resources:/code/resources
-    depends_on:
-      - db
-      - redis
