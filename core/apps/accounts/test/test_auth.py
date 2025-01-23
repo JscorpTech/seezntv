@@ -50,6 +50,7 @@ class SmsViewTest(TestCase):
         data = {"phone": self.phone, "code": self.code}
         response = self.client.post(reverse("auth-confirm"), data=data)
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
+        # Removed ConfirmModel validation
 
     def test_invalid_confirm_view(self):
         """Test confirm view."""
