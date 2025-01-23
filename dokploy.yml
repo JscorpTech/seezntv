@@ -1,0 +1,27 @@
+networks:
+  dokploy-network:
+    external: true
+
+services:
+  nginx:
+    networks:
+      - dokploy-network
+    volumes:
+      - ./resources/layout/nginx.conf:/etc/nginx/nginx.conf
+      - ./resources/:/usr/share/nginx/html/resources/
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.nginx
+  web:
+    networks:
+      - dokploy-network
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.web
+    restart: always
+    command: ${COMMAND:-sh ./entrypoint.sh}
+    volumes:
+      - .:/code
+      - ../files/resources/locale/:/code/resources/locale/
+      - ../files/resources/logs/:/code/resources/logs/
+      - ../files/resources/media/:/code/resources/media/

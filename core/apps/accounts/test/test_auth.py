@@ -1,4 +1,3 @@
-import logging
 from unittest.mock import patch
 
 from django.test import TestCase
@@ -92,14 +91,12 @@ class SmsViewTest(TestCase):
         """Test resend view."""
         data = {"phone": self.phone}
         response = self.client.post(reverse("auth-resend"), data=data)
-        logging.error(response.json())
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_reset_password_view(self):
         """Test reset password view."""
         data = {"phone": self.phone}
         response = self.client.post(reverse("reset-password-reset-password"), data=data)
-        logging.error(response.json())
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_me_view(self):
@@ -113,5 +110,5 @@ class SmsViewTest(TestCase):
         self.client.force_authenticate(user=self.user)
         data = {"first_name": "Updated"}
         response = self.client.patch(reverse("me-user-update"), data=data)
-        logging.error(response.json())
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
