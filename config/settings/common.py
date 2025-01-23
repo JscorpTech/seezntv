@@ -18,6 +18,9 @@ DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS: Union[List[str]] = ["*"]
 
+if env.bool("PROTOCOL_HTTPS", False):
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 
 DATABASES = {
     "default": {
@@ -140,7 +143,7 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = "uz"
 LANGUAGE_CODE = "uz"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "resources/media")  # Media files
-MEDIA_URL = "http://146.0.75.247:2300/seezntv/"
+MEDIA_URL = "https://f005.backblazeb2.com/file/seezntv/"
 
 AUTH_USER_MODEL = "accounts.User"
 
