@@ -35,3 +35,7 @@ boto3
 
 # !NOTE: on-admin
 django-admin-sortable2
+
+
+# !NOTE: on-payment
+click-pkg
