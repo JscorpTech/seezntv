@@ -3,7 +3,7 @@ networks:
     external: true
 
 services:
-  nginx:
+  seezntv-nginx:
     networks:
       - dokploy-network
     volumes:
@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/Dockerfile.nginx
-  web:
+  seezntv-web:
     networks:
       - dokploy-network
     build:

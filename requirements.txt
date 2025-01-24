@@ -28,6 +28,7 @@ rich
 jst-django-core~=1.1.6
 pydantic
 bcrypt
+pytest-django
 
 # !NOTE: on-storage
 django-storages

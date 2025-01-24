@@ -8,7 +8,7 @@ from ..models import PlanModel
 class PlanTest(TestCase):
 
     def _create_data(self):
-        return PlanModel._create_face()
+        return PlanModel._create_fake()
 
     def setUp(self):
         self.client = APIClient()
