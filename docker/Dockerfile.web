@@ -4,5 +4,5 @@ WORKDIR /code
 
 COPY . .
 
-RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
+RUN --mount=type=cache,id=s/$RAILWAY_SERVICE_ID-/root/.cache/pip,target=/root/.cache/pip pip install -r requirements.txt
 CMD ["sh", "./resources/scripts/entrypoint.sh"]
