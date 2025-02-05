@@ -1,0 +1,10 @@
+FROM jscorptech/django:v0.5
+
+
+WORKDIR /code
+
+COPY . .
+
+RUN --mount=type=cache,id=s/682753ce-add7-43b6-b1a0-cbb00e14648b-/root/.cache/pip,target=/root/.cache/pip pip install -r requirements.txt
+
+CMD ["sh", "./resources/scripts/entrypoint-server.sh"]
