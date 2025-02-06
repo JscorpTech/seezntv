@@ -32,7 +32,7 @@ pytest-django
 
 # !NOTE: on-storage
 django-storages
-boto3
+boto3==1.35.71
 
 # !NOTE: on-admin
 django-admin-sortable2
