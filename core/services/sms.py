@@ -22,13 +22,13 @@ class SmsService:
         sms_confirm.try_count = 0
         sms_confirm.resend_count += 1
         sms_confirm.phone = phone
-        sms_confirm.expired_time = datetime.now() + timedelta(seconds=models.SmsConfirm.SMS_EXPIRY_SECONDS)  # noqa
+        sms_confirm.expire_time = datetime.now() + timedelta(seconds=models.SmsConfirm.SMS_EXPIRY_SECONDS)  # noqa
         sms_confirm.resend_unlock_time = datetime.now() + timedelta(
             seconds=models.SmsConfirm.SMS_EXPIRY_SECONDS
         )  # noqa
         sms_confirm.save()
 
-        tasks.SendConfirm.delay(phone, code)
+        # tasks.SendConfirm.delay(phone, code)
         return True
 
     @staticmethod

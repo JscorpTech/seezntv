@@ -7,10 +7,10 @@ from rest_framework_simplejwt import tokens
 
 from django_core import exceptions
 from django.contrib.auth import get_user_model
-from core.services import sms
+from core.services.sms import SmsService
 
 
-class UserService(sms.SmsService):
+class UserService:
     def get_token(self, user):
         refresh = tokens.RefreshToken.for_user(user)
 
@@ -32,7 +32,7 @@ class UserService(sms.SmsService):
 
     def send_confirmation(self, phone) -> bool:
         try:
-            self.send_confirm(phone)
+            SmsService.send_confirm(phone)
             return True
         except exceptions.SmsException as e:
             raise PermissionDenied(_("Qayta sms yuborish uchun kuting: {}").format(e.kwargs.get("expired")))
