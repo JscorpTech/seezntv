@@ -147,10 +147,27 @@ MEDIA_URL = "https://f005.backblazeb2.com/file/seezntv/"
 
 AUTH_USER_MODEL = "accounts.User"
 
-CELERY_BROKER_URL = env("RABBITMQ_URL")
-CELERY_RESULT_BACKEND = env("RABBITMQ_RESULT_BACKEND")
+CELERY_BROKER_URL = env("REDIS_URL")
+CELERY_RESULT_BACKEND = env("REDIS_URL")
 
 ALLOWED_HOSTS += env("ALLOWED_HOSTS").split(",")
 CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS").split(",")
 SILKY_AUTHORISATION = True
 SILKY_PYTHON_PROFILER = True
+
+
+JST_LANGUAGES = [
+    {
+        "code": "uz",
+        "name": "Uzbek",
+        "is_default": True,
+    },
+    {
+        "code": "en",
+        "name": "English",
+    },
+    {
+        "code": "ru",
+        "name": "Russia",
+    },
+]

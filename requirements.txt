@@ -25,7 +25,7 @@ django-silk==5.3.1
 django-cacheops
 gunicorn
 rich
-jst-django-core~=1.1.6
+jst-django-core~=1.1.8
 pydantic
 bcrypt
 pytest-django
